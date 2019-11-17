@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayer\\DBlayer.csproj": {}
+    "C:\\Users\\Bruger\\Desktop\\FandomGit\\fandomGit\\code\\fandomMVC\\DBlayer\\DBlayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayer\\DBlayer.csproj": {
+    "C:\\Users\\Bruger\\Desktop\\FandomGit\\fandomGit\\code\\fandomMVC\\DBlayer\\DBlayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayer\\DBlayer.csproj",
+        "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\FandomGit\\fandomGit\\code\\fandomMVC\\DBlayer\\DBlayer.csproj",
         "projectName": "DBlayer",
-        "projectPath": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayer\\DBlayer.csproj",
-        "packagesPath": "C:\\Users\\Uth\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayer\\obj\\",
+        "projectPath": "C:\\Users\\Bruger\\Desktop\\FandomGit\\fandomGit\\code\\fandomMVC\\DBlayer\\DBlayer.csproj",
+        "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bruger\\Desktop\\FandomGit\\fandomGit\\code\\fandomMVC\\DBlayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Uth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,0 +1,6 @@
+C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerrr\bin\Debug\DBlayerrr.dll.config
+C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerrr\bin\Debug\DBlayerrr.dll
+C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerrr\bin\Debug\DBlayerrr.pdb
+C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.csprojAssemblyReference.cache
+C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.dll
+C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.pdb
