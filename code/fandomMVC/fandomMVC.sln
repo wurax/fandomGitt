@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clinetFandom", "clinetFandom\clinetFandom.csproj", "{7F4E3AD6-B4BA-482F-8719-310C355627E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBlayer", "DBlayer\DBlayer.csproj", "{F3DCEFF6-447A-458B-BEC6-17CFBE3F706C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7F4E3AD6-B4BA-482F-8719-310C355627E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F4E3AD6-B4BA-482F-8719-310C355627E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F4E3AD6-B4BA-482F-8719-310C355627E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3DCEFF6-447A-458B-BEC6-17CFBE3F706C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3DCEFF6-447A-458B-BEC6-17CFBE3F706C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3DCEFF6-447A-458B-BEC6-17CFBE3F706C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3DCEFF6-447A-458B-BEC6-17CFBE3F706C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
