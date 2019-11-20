@@ -8,9 +8,13 @@ namespace DBlayerrr
 {
         public interface IProductDB
     {
-         void insertProduct(Product Product);
-         Product getProductByID(int id);
+        void insertProduct(Product Product);
+        Product getProductByID(int id);
         IEnumerable<Product> GetProducts();
+
+        void removeProduct(Product product);
+
+        void UpdateProduct(Product product);
 
     }
 }

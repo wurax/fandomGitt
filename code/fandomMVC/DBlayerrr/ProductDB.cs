@@ -33,5 +33,24 @@ namespace DBlayerrr
             return productss;
 
         }
+
+        public void removeProduct(Product product)
+        {
+            db.Products.DeleteOnSubmit(product);
+            db.SubmitChanges();
+        }
+
+        //need human test
+        public void UpdateProduct(Product product)
+        {
+            Product product1 = db.Products.SingleOrDefault(p => p.productID == product.productID);
+
+            product1 = product;
+
+            db.SubmitChanges();
+
+
+            
+        }
     }
 }

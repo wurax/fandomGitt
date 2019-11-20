@@ -65,5 +65,47 @@ namespace Fandom.Tests
            Assert.IsTrue(data.price == 18.99);
            Assert.IsTrue(data.supplierID == 0);
         }
+        //    [TestMethod()]
+        //    public void InsertProductTest()
+        //    {
+        //        Mock<IProductDB> mockProductDB = new Mock<IProductDB>();
+
+        //        ProductData test = new ProductData()
+        //        {
+        //            price = 100,
+        //            productID = 1,
+        //            productDescription = "den er go",
+        //            productName = "name",
+        //            quantity = 12,
+        //            supplierID = 0,
+        //        };
+
+        //        Product testasProduct = new Product()
+        //        {
+        //            price = 100,
+        //            productID = 1,
+        //            productDescription = "den er go",
+        //            productName = "name",
+        //            quantity = 12,
+        //            supplierID = 0,
+        //            Stocks = new System.Data.Linq.EntitySet<Stock>(),
+        //            Locations = new System.Data.Linq.EntitySet<Location>(),
+        //            OrderLines = new System.Data.Linq.EntitySet<OrderLine>(),
+        //            ProdPropertyValues = new System.Data.Linq.EntitySet<ProdPropertyValue>(),
+        //            ProductFandoms = new System.Data.Linq.EntitySet<ProductFandom>(),
+        //            Supplier = new Supplier(),
+        //        };
+
+        //        mockProductDB.Setup(obj => obj.getProductByID(1)).Returns(testasProduct);
+        //        //act
+        //        IProductService productService = new ProductServices(mockProductDB.Object);
+
+        //        productService.Insertproduct(test);
+        //        ProductData data = productService.GetProductName(1);
+
+
+
+        //        mockProductDB.Verify(p => p.insertProduct(productService.Insertproduct(test)));
+        //    }
     }
 }

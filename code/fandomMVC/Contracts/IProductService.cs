@@ -11,5 +11,11 @@ namespace Contracts
     {
         [OperationContract]
         ProductData GetProductName(int ID);
+        [OperationContract]
+        void Insertproduct(ProductData productData);
+
+        void RemoveProduct(ProductData productData);
+
+        void updateProduct(ProductData productData);
     }
 }
