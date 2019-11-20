@@ -234,7 +234,7 @@ namespace DBlayerrr
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zipCode", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zipCode", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int zipCode
 		{
 			get
@@ -527,7 +527,7 @@ namespace DBlayerrr
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int productID
 		{
 			get

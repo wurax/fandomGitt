@@ -224,3 +224,7 @@ C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\WebApplication1\obj\D
 C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\WebApplication1\obj\Debug\fandom.dll
 C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\WebApplication1\obj\Debug\fandom.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\WebApplication1\bin\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\WebApplication1\bin\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\WebApplication1\bin\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\WebApplication1\bin\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml

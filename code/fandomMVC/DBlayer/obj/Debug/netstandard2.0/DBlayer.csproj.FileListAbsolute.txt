@@ -1,8 +1,0 @@
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayer\bin\Debug\netstandard2.0\DBlayer.deps.json
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayer\bin\Debug\netstandard2.0\DBlayer.dll
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayer\obj\Debug\netstandard2.0\DBlayer.csprojAssemblyReference.cache
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayer\obj\Debug\netstandard2.0\DBlayer.AssemblyInfoInputs.cache
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayer\obj\Debug\netstandard2.0\DBlayer.AssemblyInfo.cs
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayer\bin\Debug\netstandard2.0\DBlayer.pdb
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayer\obj\Debug\netstandard2.0\DBlayer.dll
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayer\obj\Debug\netstandard2.0\DBlayer.pdb

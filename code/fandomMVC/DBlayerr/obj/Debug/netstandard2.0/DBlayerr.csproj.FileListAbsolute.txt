@@ -1,8 +1,0 @@
-C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerr\bin\Debug\netstandard2.0\DBlayerr.deps.json
-C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerr\bin\Debug\netstandard2.0\DBlayerr.dll
-C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerr\bin\Debug\netstandard2.0\DBlayerr.pdb
-C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerr\obj\Debug\netstandard2.0\DBlayerr.csprojAssemblyReference.cache
-C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerr\obj\Debug\netstandard2.0\DBlayerr.AssemblyInfoInputs.cache
-C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerr\obj\Debug\netstandard2.0\DBlayerr.AssemblyInfo.cs
-C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerr\obj\Debug\netstandard2.0\DBlayerr.dll
-C:\Users\Bruger\Desktop\FandomGit\fandomGit\code\fandomMVC\DBlayerr\obj\Debug\netstandard2.0\DBlayerr.pdb

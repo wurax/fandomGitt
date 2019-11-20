@@ -2,7 +2,7 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=kraka.ucn.dk;Initial Catalog=dmaa0918_1074212;Persist Security Info=True;User ID=dmaa0918_1074212" SettingsObjectName="DBlayerrr.Properties.Settings" SettingsPropertyName="dmaa0918_1074212ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.City" Member="Cities">
     <Type Name="City">
-      <Column Name="zipCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="zipCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="city" Member="city1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="City_Supplier" Member="Suppliers" ThisKey="zipCode" OtherKey="zipcode" Type="Supplier" />
     </Type>
@@ -18,7 +18,7 @@
   </Table>
   <Table Name="dbo.Location" Member="Locations">
     <Type Name="Location">
-      <Column Name="productID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="productID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="locationNo" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Product_Location" Member="Product" ThisKey="productID" OtherKey="productID" Type="Product" IsForeignKey="true" />
     </Type>
