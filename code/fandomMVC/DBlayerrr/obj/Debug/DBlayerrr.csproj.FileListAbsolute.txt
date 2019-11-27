@@ -11,7 +11,7 @@ C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\bin\Debug\Micros
 C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.csprojAssemblyReference.cache
 C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.csproj.CopyComplete
 C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.dll
 C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.csprojAssemblyReference.cache

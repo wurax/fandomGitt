@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{5D109623-D7DB-40B1-A192-4ACB36105328}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp3", "WpfApp3\WpfApp3.csproj", "{232F836A-CCC0-4ED5-98B7-781A632A8F4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{5D109623-D7DB-40B1-A192-4ACB36105328}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D109623-D7DB-40B1-A192-4ACB36105328}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D109623-D7DB-40B1-A192-4ACB36105328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232F836A-CCC0-4ED5-98B7-781A632A8F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232F836A-CCC0-4ED5-98B7-781A632A8F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232F836A-CCC0-4ED5-98B7-781A632A8F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232F836A-CCC0-4ED5-98B7-781A632A8F4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
