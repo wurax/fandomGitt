@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Proxies;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Contracts;
 
 namespace WpfApp3
 {
@@ -111,8 +114,23 @@ namespace WpfApp3
 
         private void Button_Click_11(object sender, RoutedEventArgs e)
         {
-            myTabControl.SelectedItem = productMenuTab;
+            if (txtPrice !=null && txtName !=null && txtLocation !=null && txtQuantity !=null && txtSupplier !=null && txtDescription !=null)
+            {
+               
+                //do somehitng
+                ProductClient poxy = new ProductClient();
 
+                ProductData data = new ProductData();
+                data.productName = txtName.Text;
+                data.price = double.Parse(txtPrice.Text);
+                data.quantity = int.Parse(txtQuantity.Text);
+                data.supplierID = int.Parse(txtSupplier.Text);
+                data.productDescription = txtDescription.Text;
+                data.productID = 0;
+
+
+                poxy.Insertproduct(data); 
+            }
         }
 
         private void Button_Click_12(object sender, RoutedEventArgs e)
@@ -129,5 +147,7 @@ namespace WpfApp3
         {
             myTabControl.SelectedItem = productMenuTab;
         }
+
+        
     }
 }
