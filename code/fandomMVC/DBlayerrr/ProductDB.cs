@@ -45,12 +45,26 @@ namespace DBlayerrr
         {
             Product product1 = db.Products.SingleOrDefault(p => p.productID == product.productID);
 
-            product1 = product;
+            product1.price = product.price;
+            product1.productName = product.productName;
+            product1.productDescription = product.productDescription;
+            product1.supplierID = product.supplierID;
+            product1.quantity = product.quantity;
 
             db.SubmitChanges();
 
 
             
+
+        }
+
+        public Product GetProductByName(string name)
+        {
+            var products = db.Products;
+            Product firstproduct = (from a in products
+                                    where a.productName == name
+                                    select a).SingleOrDefault();
+            return firstproduct;
         }
     }
 }

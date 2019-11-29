@@ -20,7 +20,7 @@ namespace Services
             this._productDB = productDB;
         }
 
-        public ProductData GetProductName(int ID)
+        public ProductData GetProductByID(int ID)
         {
 
             ProductData productData = null;
@@ -41,13 +41,56 @@ namespace Services
             return productData;
         }
 
+        public ProductData GetProductByName(string Name)
+        {
+            ProductData productData = null;
+            IProductDB productDB = _productDB ?? new ProductDB();
+            Product productEntity = productDB.GetProductByName(Name);
+            if (productEntity != null)
+            {
+                productData = new ProductData();
+                productData.productName = productEntity.productName;
+                productData.productID = productEntity.productID;
+                productData.productDescription = productEntity.productDescription;
+                productData.quantity = productEntity.quantity;
+                productData.supplierID = productEntity.supplierID;
+                productData.price = productEntity.price;
+
+
+            }
+            return productData;
+        }
+
+        public List<ProductData> GetProducts()
+        {
+            List<ProductData> productsData = new List<ProductData>();
+            IEnumerable<Product> data = null; 
+            IProductDB productDB = _productDB ?? new ProductDB();
+            data = productDB.GetProducts();
+            if(data !=null)
+            {
+                foreach (var product in data)
+                {
+                   ProductData productData = new ProductData();
+                    productData.productName = product.productName;
+                    productData.productID = product.productID;
+                    productData.productDescription = product.productDescription;
+                    productData.quantity = product.quantity;
+                    productData.supplierID = product.supplierID;
+                    productData.price = product.price;
+                    productsData.Add(productData);
+                }
+            }
+            return productsData;
+        }
+
 
         // ask  michael how to test
         public void Insertproduct(ProductData productData)
         {
             IProductDB productDB = _productDB ?? new ProductDB();
             Product Insertingproduct = new Product();
-            ProductData check = GetProductName(productData.productID);
+            ProductData check = GetProductByID(productData.productID);
             if (productData != null && check == null)
             {
                 Insertingproduct.productName = productData.productName;
@@ -73,7 +116,7 @@ namespace Services
         {
             IProductDB productDB = _productDB ?? new ProductDB();
             Product removeProduct = new Product();
-            ProductData check = GetProductName(productData.productID);
+            ProductData check = GetProductByID(productData.productID);
             if (productData != null && check != null)
             {
                 removeProduct.productName = productData.productName;
@@ -97,8 +140,8 @@ namespace Services
         {
             IProductDB productDB = _productDB ?? new ProductDB();
             Product updateproduct = new Product();
-            ProductData check = GetProductName(productData.productID);
-            if (productData != null && check == null)
+            ProductData check = GetProductByID(productData.productID);
+            if (productData != null && check != null)
             {
                 updateproduct.productName = productData.productName;
                 updateproduct.productID = productData.productID;

@@ -53,7 +53,7 @@ namespace Fandom.Tests
 
             //Act
             IProductService productService = new ProductServices(mockProductDB.Object);
-            ProductData data = productService.GetProductName(1);
+            ProductData data = productService.GetProductByID(1);
             //assert
 
             //Assert.IsNotNull(data);

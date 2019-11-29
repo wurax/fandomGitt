@@ -11,9 +11,19 @@ namespace Proxies
 {
      public class ProductClient : ClientBase<IProductService>, IProductService
     {
-        public ProductData GetProductName(int ID)
+        public ProductData GetProductByID(int ID)
         {
-            return Channel.GetProductName(ID);
+            return Channel.GetProductByID(ID);
+        }
+
+        public ProductData GetProductByName(string Name)
+        {
+            return Channel.GetProductByName(Name);
+        }
+
+        public List<ProductData> GetProducts()
+        {
+            return Channel.GetProducts();
         }
 
         public void Insertproduct(ProductData productData)

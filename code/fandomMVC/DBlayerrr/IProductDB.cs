@@ -16,5 +16,7 @@ namespace DBlayerrr
 
         void UpdateProduct(Product product);
 
+        Product GetProductByName(string name);
+
     }
 }

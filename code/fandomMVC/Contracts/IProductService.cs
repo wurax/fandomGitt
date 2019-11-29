@@ -10,12 +10,16 @@ namespace Contracts
         public interface IProductService
     {
         [OperationContract]
-        ProductData GetProductName(int ID);
+        ProductData GetProductByID(int ID);
         [OperationContract]
         void Insertproduct(ProductData productData);
-
+        [OperationContract]
         void RemoveProduct(ProductData productData);
-
+        [OperationContract]
         void updateProduct(ProductData productData);
+        [OperationContract]
+        List<ProductData> GetProducts();
+        [OperationContract]
+        ProductData GetProductByName(string Name);
     }
 }

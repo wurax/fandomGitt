@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Contracts;
+using System.Data;
 
 namespace WpfApp3
 {
@@ -26,6 +27,7 @@ namespace WpfApp3
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         //inserted
@@ -34,6 +36,8 @@ namespace WpfApp3
         string caption = "Word Processor";
         MessageBoxButton button = MessageBoxButton.YesNo;
         MessageBoxImage icon = MessageBoxImage.Warning;
+        ProductData selcetion = null;
+
         //inserted close
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -58,7 +62,19 @@ namespace WpfApp3
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            myTabControl.SelectedItem = editProductTab;
+            
+              
+            if (selcetion !=null)
+            {
+               
+                txtUDescription.Text = selcetion.productDescription;
+                txtUName.Text = selcetion.productName;
+                txtUPrice.Text = selcetion.price.ToString();
+                txtUQuntity.Text = selcetion.quantity.ToString();
+                txtUSupplier.Text = selcetion.supplierID.ToString();
+                myTabControl.SelectedItem = editProductTab;
+            }
+
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -108,6 +124,21 @@ namespace WpfApp3
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
+            if(selcetion != null)
+            {
+                ProductClient proxy = new ProductClient();
+                ProductData data = new ProductData();
+                data.price = double.Parse(txtUPrice.Text);
+                data.productID = selcetion.productID;
+                data.productDescription = txtUDescription.Text;
+                data.productName = txtName.Text;
+                data.quantity = int.Parse(txtUQuntity.Text);
+                data.quantity = int.Parse(txtUSupplier.Text);
+                // take taxt from txtUboxes and save them a productdata send it tho updateProduct close proxy
+
+                proxy.updateProduct(data);
+            }
+           
             myTabControl.SelectedItem = searchProductTab;
 
         }
@@ -118,7 +149,7 @@ namespace WpfApp3
             {
                
                 //do somehitng
-                ProductClient poxy = new ProductClient();
+                ProductClient proxy = new ProductClient();
 
                 ProductData data = new ProductData();
                 data.productName = txtName.Text;
@@ -129,7 +160,7 @@ namespace WpfApp3
                 data.productID = 0;
 
 
-                poxy.Insertproduct(data); 
+                proxy.Insertproduct(data); 
             }
         }
 
@@ -148,6 +179,45 @@ namespace WpfApp3
             myTabControl.SelectedItem = productMenuTab;
         }
 
-        
+        private void searchProductTab_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        {
+            
+
+        }
+
+        private void LBproductName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void myTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(myTabControl.SelectedItem == editProductTab && dataProducts.SelectedItem !=null)
+            {
+                
+                    var row = (ProductData)dataProducts.SelectedItem;
+                    txtDescription.Text = row.productName;
+                
+            }
+
+            if(myTabControl.SelectedItem == searchProductTab)
+            {
+                ProductClient proxy = new ProductClient();
+               dataProducts.ItemsSource= proxy.GetProducts();
+                
+                    
+                    proxy.Close();
+                }
+            }
+
+        private void dataProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var row = (ProductData)dataProducts.SelectedItem;
+            if (row != null)
+            {
+                selcetion = row;
+            }
+        }
     }
+    
 }

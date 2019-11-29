@@ -9,7 +9,7 @@ namespace DBlayerrr
     public class CityDB
     {
         fandomDBDataContext db = new fandomDBDataContext();
-        public void insertCity(City city)
+        public void InsertCity(City city)
         {
             var c = city;
             db.Cities.InsertOnSubmit(c);

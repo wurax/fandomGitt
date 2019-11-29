@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="556.404" Width="618.227">
+        Title="MainWindow" Height="900" Width="1600
+        ">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="38*"/>
             <ColumnDefinition Width="573*"/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="myTabControl" HorizontalAlignment="Center" Height="551" VerticalAlignment="Center" Width="611" Margin="0,-24,0,0" Grid.ColumnSpan="2">
+        <TabControl x:Name="myTabControl" HorizontalAlignment="Center" Height="551" VerticalAlignment="Center" Width="611" Margin="0,-24,0,0" Grid.ColumnSpan="2" SelectionChanged="myTabControl_SelectionChanged" >
             <TabItem x:Name="mainMenuTab" Header="MainMenu" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54" Margin="-1,0,0,0">
                 <Grid Background="#FFE5E5E5">
                     <Button Content="Product Menu" HorizontalAlignment="Left" Margin="202,134,0,0" VerticalAlignment="Top" Width="190" FontSize="20" Height="44" Click="Button_Click_12"/>
@@ -50,26 +51,26 @@
                     <Label Content="Description:" HorizontalAlignment="Left" Margin="37,226,0,0" VerticalAlignment="Top" Width="73" Height="26"/>
                     <Label Content="Quantity:" HorizontalAlignment="Left" Margin="38,164,0,0" VerticalAlignment="Top" Width="73" Height="26"/>
                     <Label Content="Location:" HorizontalAlignment="Left" Margin="38,195,0,0" VerticalAlignment="Top" Width="73" Height="26"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="110,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="110,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="110,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="110,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="110,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="169" Margin="110,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2"/>
+                    <TextBox HorizontalAlignment="Left" Name="txtUPrice" Height="23" Margin="110,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2"/>
+                    <TextBox HorizontalAlignment="Left" Name="txtUName" Height="23" Margin="110,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2" />
+                    <TextBox HorizontalAlignment="Left" Name="txtUSupplier" Height="23" Margin="110,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2"/>
+                    <TextBox HorizontalAlignment="Left" Name="txtUQuntity" Height="23" Margin="110,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
+                    <TextBox HorizontalAlignment="Left" Name="txtULoation" Height="23" Margin="110,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2"/>
+                    <TextBox HorizontalAlignment="Left" Name="txtUDescription" Height="169" Margin="110,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" Grid.ColumnSpan="2"/>
                     <Button Content="CANCEL" HorizontalAlignment="Left" Margin="344.333,437,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="Button_Click_10"/>
                     <Button Content="SAVE" HorizontalAlignment="Left" Margin="234.333,437,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="Button_Click_9"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="searchProductTab" Header="Srch-p" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54" Margin="6.667,0,-6.667,0">
+            <TabItem x:Name="searchProductTab" Header="Srch-p" HorizontalAlignment="Left" Height="20" VerticalAlignment="Center" Width="54" Margin="6.667,0,-6.667,0" ContextMenuOpening="searchProductTab_ContextMenuOpening">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Name:" HorizontalAlignment="Left" Margin="38,71,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
                     <Label Content="Search product" HorizontalAlignment="Left" Margin="175,0,0,0" VerticalAlignment="Top" Height="52" Width="264" FontSize="36" FontWeight="Bold"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="110,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="388"/>
                     <Button Content="SEARCH" HorizontalAlignment="Left" Margin="514,71,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-                    <ListBox HorizontalAlignment="Left" Height="306" Margin="10,112,0,0" VerticalAlignment="Top" Width="579"/>
-                    <Button Content="UPDATE" HorizontalAlignment="Left" Margin="423,441,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+                    <Button Content="UPDATE" Name="btnUPdate" HorizontalAlignment="Left" Margin="423,441,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
                     <Button Content="CANCEL" HorizontalAlignment="Left" Margin="514,493,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
                     <Button Content="DELETE" HorizontalAlignment="Left" Margin="514,441,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_8"/>
+                    <DataGrid HorizontalAlignment="Stretch" Name="dataProducts" Height="310" Margin="110,120,53,93" VerticalAlignment="Center" SelectionChanged="dataProducts_SelectionChanged" />
                 </Grid>
             </TabItem>
             <TabItem x:Name="productMenuTab" Header="P-MEN" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54" Margin="-151.333,0,0,0">
