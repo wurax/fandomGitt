@@ -65,14 +65,14 @@ VALUES('pepe',20203030,'jjt@pepe.dk',9000)
 
 -----------Product-----------
 
-INSERT INTO Product(price, productname, productDescription, supplierID, quantity)
-VALUES(500,  'Lord of the rings Frodo poster', 'a poster of Frodo holding the ring', 3, 20);
+INSERT INTO Product(price, productname, productDescription, supplierID, quantity, visible)
+VALUES(500,  'Lord of the rings Frodo poster', 'a poster of Frodo holding the ring', 3, 20, 1);
 
-INSERT INTO Product(price, productname, productDescription, supplierID, quantity)
-VALUES(25000, 'Lord of the rings original ring', 'The original ring used in during the filming of lord of the rings', 2, 1);
+INSERT INTO Product(price, productname, productDescription, supplierID, quantity, visible)
+VALUES(25000, 'Lord of the rings original ring', 'The original ring used in during the filming of lord of the rings', 2, 1, 0);
 
-INSERT INTO Product(price, productname, productDescription, supplierID, quantity)
-VALUES(500,  'J.cole T-shirt', 'picture of J.cole performing at a koncert', 1, 15);
+INSERT INTO Product(price, productname, productDescription, supplierID, quantity, visible)
+VALUES(500,  'J.cole T-shirt', 'picture of J.cole performing at a koncert', 1, 15, 1);
 
 -----------Stock-----------
 INSERT INTO Stock (arrivalDate, supplierId,inOrder,productID)
