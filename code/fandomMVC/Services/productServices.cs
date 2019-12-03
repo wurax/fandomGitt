@@ -20,6 +20,30 @@ namespace Services
             this._productDB = productDB;
         }
 
+        public IEnumerable<ProductData> GetlikeProdctNames(string name)
+        {
+            List<ProductData> productsData = new List<ProductData>();
+            IEnumerable<Product> data = null;
+            IProductDB productDB = _productDB ?? new ProductDB();
+            data = productDB.GetlikeProdctNames(name);
+            if (data != null)
+            {
+                foreach (var product in data)
+                {
+                    ProductData productData = new ProductData();
+                    productData.productName = product.productName;
+                    productData.productID = product.productID;
+                    productData.productDescription = product.productDescription;
+                    productData.quantity = product.quantity;
+                    productData.supplierID = product.supplierID;
+                    productData.price = product.price;
+                    productData.viasble = product.visible;
+                    productsData.Add(productData);
+                }
+            }
+            return productsData;
+        }
+
         public ProductData GetProductByID(int ID)
         {
 
@@ -35,6 +59,7 @@ namespace Services
                 productData.quantity = productEntity.quantity;
                 productData.supplierID = productEntity.supplierID;
                 productData.price = productEntity.price;
+                productData.viasble = productEntity.visible;
 
 
             }
@@ -55,6 +80,7 @@ namespace Services
                 productData.quantity = productEntity.quantity;
                 productData.supplierID = productEntity.supplierID;
                 productData.price = productEntity.price;
+                productData.viasble = productEntity.visible;
 
 
             }
@@ -78,6 +104,7 @@ namespace Services
                     productData.quantity = product.quantity;
                     productData.supplierID = product.supplierID;
                     productData.price = product.price;
+                    productData.viasble = product.visible;
                     productsData.Add(productData);
                 }
             }
@@ -99,6 +126,7 @@ namespace Services
                 Insertingproduct.quantity = productData.quantity;
                 Insertingproduct.productDescription = productData.productDescription;
                 Insertingproduct.supplierID = productData.supplierID;
+                Insertingproduct.visible = productData.viasble;
                 // need refactoring
                 Insertingproduct.Stocks = new System.Data.Linq.EntitySet<Stock>();
                 Insertingproduct.Locations = new System.Data.Linq.EntitySet<Location>();
@@ -125,6 +153,7 @@ namespace Services
                 removeProduct.quantity = productData.quantity;
                 removeProduct.productDescription = productData.productDescription;
                 removeProduct.supplierID = productData.supplierID;
+                removeProduct.visible = productData.viasble;
                 // need refactoring
                 removeProduct.Stocks = new System.Data.Linq.EntitySet<Stock>();
                 removeProduct.Locations = new System.Data.Linq.EntitySet<Location>();
@@ -136,7 +165,7 @@ namespace Services
             }
         }
 
-        public void updateProduct(ProductData productData)
+        public void setViasableTofalse(ProductData productData)
         {
             IProductDB productDB = _productDB ?? new ProductDB();
             Product updateproduct = new Product();
@@ -149,6 +178,57 @@ namespace Services
                 updateproduct.quantity = productData.quantity;
                 updateproduct.productDescription = productData.productDescription;
                 updateproduct.supplierID = productData.supplierID;
+                updateproduct.visible = false;
+                // need refactoring
+                updateproduct.Stocks = new System.Data.Linq.EntitySet<Stock>();
+                updateproduct.Locations = new System.Data.Linq.EntitySet<Location>();
+                updateproduct.OrderLines = new System.Data.Linq.EntitySet<OrderLine>();
+                updateproduct.ProdPropertyValues = new System.Data.Linq.EntitySet<ProdPropertyValue>();
+                updateproduct.ProductFandoms = new System.Data.Linq.EntitySet<ProductFandom>();
+                updateproduct.Supplier = new Supplier();
+                productDB.productToUnviasable(updateproduct);
+            }
+        }
+
+        public void setViasableTotrue(ProductData productData)
+        {
+            IProductDB productDB = _productDB ?? new ProductDB();
+            Product updateproduct = new Product();
+            ProductData check = GetProductByID(productData.productID);
+            if (productData != null && check != null)
+            {
+                updateproduct.productName = productData.productName;
+                updateproduct.productID = productData.productID;
+                updateproduct.price = productData.price;
+                updateproduct.quantity = productData.quantity;
+                updateproduct.productDescription = productData.productDescription;
+                updateproduct.supplierID = productData.supplierID;
+                updateproduct.visible = true;
+                // need refactoring
+                updateproduct.Stocks = new System.Data.Linq.EntitySet<Stock>();
+                updateproduct.Locations = new System.Data.Linq.EntitySet<Location>();
+                updateproduct.OrderLines = new System.Data.Linq.EntitySet<OrderLine>();
+                updateproduct.ProdPropertyValues = new System.Data.Linq.EntitySet<ProdPropertyValue>();
+                updateproduct.ProductFandoms = new System.Data.Linq.EntitySet<ProductFandom>();
+                updateproduct.Supplier = new Supplier();
+                productDB.productToviasble(updateproduct);
+            }
+        }
+
+            public void updateProduct(ProductData productData)
+            {
+            IProductDB productDB = _productDB ?? new ProductDB();
+            Product updateproduct = new Product();
+            ProductData check = GetProductByID(productData.productID);
+            if (productData != null && check != null)
+            {
+                updateproduct.productName = productData.productName;
+                updateproduct.productID = productData.productID;
+                updateproduct.price = productData.price;
+                updateproduct.quantity = productData.quantity;
+                updateproduct.productDescription = productData.productDescription;
+                updateproduct.supplierID = productData.supplierID;
+                updateproduct.visible = productData.viasble;
                 // need refactoring
                 updateproduct.Stocks = new System.Data.Linq.EntitySet<Stock>();
                 updateproduct.Locations = new System.Data.Linq.EntitySet<Location>();

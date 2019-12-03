@@ -21,5 +21,11 @@ namespace Contracts
         List<ProductData> GetProducts();
         [OperationContract]
         ProductData GetProductByName(string Name);
+        [OperationContract]
+        void setViasableTofalse(ProductData productData);
+        [OperationContract]
+        void setViasableTotrue(ProductData productData);
+        [OperationContract]
+        IEnumerable<ProductData> GetlikeProdctNames(string name);
     }
 }

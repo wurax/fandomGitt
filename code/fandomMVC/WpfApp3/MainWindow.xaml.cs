@@ -34,12 +34,13 @@ namespace WpfApp3
         // Configure the message box to be displayed
         string messageBoxText = "Do you want to delete the product?";
         string caption = "Word Processor";
-        MessageBoxButton button = MessageBoxButton.YesNo;
+        //MessageBoxButton button = MessageBoxButton.YesNo;
+        //button.IComponentConnector IComponentConnectorYesNO = new IComponentConnector;
         MessageBoxImage icon = MessageBoxImage.Warning;
         ProductData selcetion = null;
 
         //inserted close
-
+        
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -114,7 +115,14 @@ namespace WpfApp3
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(messageBoxText, caption, button, icon);
+            //MessageBox.Show(messageBoxText, caption, button, icon);
+            if (selcetion !=null)
+            {
+                ProductClient proxy = new ProductClient();
+                ProductData data = selcetion;
+                data.viasble = false;
+                proxy.setViasableTofalse(data);
+            }
         }
 
         private void Button_Click_10(object sender, RoutedEventArgs e)
@@ -135,10 +143,13 @@ namespace WpfApp3
                 data.quantity = int.Parse(txtUQuntity.Text);
                 data.quantity = int.Parse(txtUSupplier.Text);
                 // take taxt from txtUboxes and save them a productdata send it tho updateProduct close proxy
+                selcetion = null;
+                  
 
                 proxy.updateProduct(data);
+              
             }
-           
+            
             myTabControl.SelectedItem = searchProductTab;
 
         }
@@ -217,6 +228,24 @@ namespace WpfApp3
             {
                 selcetion = row;
             }
+        }
+
+        private void setVisible_Click(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show(messageBoxText, caption, button, icon);
+            if (selcetion != null)
+            {
+                ProductClient proxy = new ProductClient();
+                ProductData data = selcetion;
+                data.viasble = false;
+                proxy.setViasableTotrue(data);
+            }
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            ProductClient proxy = new ProductClient();
+            dataProducts.ItemsSource = proxy.GetlikeProdctNames(txtSearch.Text);
         }
     }
     

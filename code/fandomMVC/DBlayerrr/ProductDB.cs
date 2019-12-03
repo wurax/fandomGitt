@@ -66,5 +66,28 @@ namespace DBlayerrr
                                     select a).SingleOrDefault();
             return firstproduct;
         }
+
+        public void productToUnviasable(Product product)
+        {
+            Product product1 = db.Products.SingleOrDefault(p => p.productID == product.productID);
+
+            product1.visible = false;
+            db.SubmitChanges();
+        }
+
+        public void productToviasble(Product product)
+        {
+            Product product1 = db.Products.SingleOrDefault(p => p.productID == product.productID);
+
+            product1.visible = true;
+            db.SubmitChanges();
+        }
+
+        public IEnumerable<Product> GetlikeProdctNames(string name)
+        {
+            var products = db.Products;
+            var productss = (from p in products where p.productName.IndexOf(name)>= 0 select p).AsEnumerable();
+            return productss;
+        }
     }
 }
