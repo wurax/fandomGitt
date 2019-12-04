@@ -67,7 +67,7 @@ namespace DBlayerrr
             return firstproduct;
         }
 
-        public void productToUnviasable(Product product)
+        public void productToInvisible(Product product)
         {
             Product product1 = db.Products.SingleOrDefault(p => p.productID == product.productID);
 
@@ -75,7 +75,7 @@ namespace DBlayerrr
             db.SubmitChanges();
         }
 
-        public void productToviasble(Product product)
+        public void productToVisible(Product product)
         {
             Product product1 = db.Products.SingleOrDefault(p => p.productID == product.productID);
 

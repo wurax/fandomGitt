@@ -6,8 +6,8 @@ using System.Text;
 
 namespace Contracts
 {
-        [ServiceContract]
-        public interface IProductService
+    [ServiceContract]
+    public interface IProductService
     {
         [OperationContract]
         ProductData GetProductByID(int ID);
@@ -22,9 +22,9 @@ namespace Contracts
         [OperationContract]
         ProductData GetProductByName(string Name);
         [OperationContract]
-        void setViasableTofalse(ProductData productData);
+        void setVisibleTofalse(ProductData productData);
         [OperationContract]
-        void setViasableTotrue(ProductData productData);
+        void setVisibleTotrue(ProductData productData);
         [OperationContract]
         IEnumerable<ProductData> GetlikeProdctNames(string name);
     }

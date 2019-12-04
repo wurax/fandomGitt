@@ -41,14 +41,14 @@ namespace Proxies
             Channel.RemoveProduct(productData);
         }
 
-        public void setViasableTofalse(ProductData productData)
+        public void setVisibleTofalse(ProductData productData)
         {
-            Channel.setViasableTofalse(productData);
+            Channel.setVisibleTofalse(productData);
         }
 
-        public void setViasableTotrue(ProductData productData)
+        public void setVisibleTotrue(ProductData productData)
         {
-            Channel.setViasableTotrue(productData);
+            Channel.setVisibleTotrue(productData);
         }
 
         public void updateProduct(ProductData productData)

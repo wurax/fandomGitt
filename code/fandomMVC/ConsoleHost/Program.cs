@@ -13,13 +13,18 @@ namespace ConsoleHost
     {
         static void Main(string[] args)
         {
-           ServiceHost HostProductService = new ServiceHost(typeof(ProductServices));
-            HostProductService.Open();
+            ServiceHost HostProductService1 = new ServiceHost(typeof(ProductServices));
+            HostProductService1.Open();
+
+            ServiceHost HostProductService2 = new ServiceHost(typeof(OrderService));
+            HostProductService2.Open();
+            
 
             Console.WriteLine("Services started. Press [Enter] to exit.");
             Console.ReadLine();
 
-            HostProductService.Close();
+            HostProductService1.Close();
+            HostProductService2.Close();
         }
     }
 }
