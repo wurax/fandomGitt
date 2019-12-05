@@ -165,7 +165,7 @@ namespace Services
             }
         }
 
-        public void setViasableTofalse(ProductData productData)
+        public void setVisibleTofalse(ProductData productData)
         {
             IProductDB productDB = _productDB ?? new ProductDB();
             Product updateproduct = new Product();
@@ -186,11 +186,11 @@ namespace Services
                 updateproduct.ProdPropertyValues = new System.Data.Linq.EntitySet<ProdPropertyValue>();
                 updateproduct.ProductFandoms = new System.Data.Linq.EntitySet<ProductFandom>();
                 updateproduct.Supplier = new Supplier();
-                productDB.productToUnviasable(updateproduct);
+                productDB.productToInvisible(updateproduct);
             }
         }
 
-        public void setViasableTotrue(ProductData productData)
+        public void setVisibleTotrue(ProductData productData)
         {
             IProductDB productDB = _productDB ?? new ProductDB();
             Product updateproduct = new Product();
@@ -211,7 +211,7 @@ namespace Services
                 updateproduct.ProdPropertyValues = new System.Data.Linq.EntitySet<ProdPropertyValue>();
                 updateproduct.ProductFandoms = new System.Data.Linq.EntitySet<ProductFandom>();
                 updateproduct.Supplier = new Supplier();
-                productDB.productToviasble(updateproduct);
+                productDB.productToVisible(updateproduct);
             }
         }
 

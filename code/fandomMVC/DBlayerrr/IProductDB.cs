@@ -18,9 +18,9 @@ namespace DBlayerrr
 
         Product GetProductByName(string name);
 
-        void productToUnviasable(Product product);
+        void productToInvisible(Product product);
 
-        void productToviasble(Product product);
+        void productToVisible(Product product);
 
         IEnumerable<Product> GetlikeProdctNames(string name);
     }
