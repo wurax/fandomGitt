@@ -21,9 +21,7 @@ namespace Contracts
         [DataMember]
         public int? supplierID { get; set; }
         [DataMember]
-        public int? quantity { get; set; }
-        [DataMember]
-        public bool? viasble { get; set; }
+        public int? quantity { get; set; }       
     }
 }
 

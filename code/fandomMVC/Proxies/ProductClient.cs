@@ -11,11 +11,6 @@ namespace Proxies
 {
      public class ProductClient : ClientBase<IProductService>, IProductService
     {
-        public IEnumerable<ProductData> GetlikeProdctNames(string name)
-        {
-            return Channel.GetlikeProdctNames(name);
-        }
-
         public ProductData GetProductByID(int ID)
         {
             return Channel.GetProductByID(ID);
@@ -39,16 +34,6 @@ namespace Proxies
         public void RemoveProduct(ProductData productData)
         {
             Channel.RemoveProduct(productData);
-        }
-
-        public void setViasableTofalse(ProductData productData)
-        {
-            Channel.setViasableTofalse(productData);
-        }
-
-        public void setViasableTotrue(ProductData productData)
-        {
-            Channel.setViasableTotrue(productData);
         }
 
         public void updateProduct(ProductData productData)
