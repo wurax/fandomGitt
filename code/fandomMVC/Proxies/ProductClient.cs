@@ -36,6 +36,19 @@ namespace Proxies
             Channel.RemoveProduct(productData);
         }
 
+<<<<<<< HEAD
+=======
+        public void setViasableTofalse(ProductData productData)
+        {
+            Channel.setViasableTofalse(productData);
+        }
+
+        public void setViasableTotrue(ProductData productData)
+        {
+            Channel.setViasableTotrue(productData);
+        }
+
+>>>>>>> parent of 371b918... Order
         public void updateProduct(ProductData productData)
         {
             Channel.updateProduct(productData);

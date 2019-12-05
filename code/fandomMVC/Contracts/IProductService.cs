@@ -21,5 +21,14 @@ namespace Contracts
         List<ProductData> GetProducts();
         [OperationContract]
         ProductData GetProductByName(string Name);
+<<<<<<< HEAD
+=======
+        [OperationContract]
+        void setViasableTofalse(ProductData productData);
+        [OperationContract]
+        void setViasableTotrue(ProductData productData);
+        [OperationContract]
+        IEnumerable<ProductData> GetlikeProdctNames(string name);
+>>>>>>> parent of 371b918... Order
     }
 }

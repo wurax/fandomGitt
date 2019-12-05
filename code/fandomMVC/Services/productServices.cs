@@ -136,7 +136,10 @@ namespace Services
             }
         }
 
+<<<<<<< HEAD
         public void updateProduct(ProductData productData)
+=======
+        public void setViasableTofalse(ProductData productData)
         {
             IProductDB productDB = _productDB ?? new ProductDB();
             Product updateproduct = new Product();
@@ -149,6 +152,61 @@ namespace Services
                 updateproduct.quantity = productData.quantity;
                 updateproduct.productDescription = productData.productDescription;
                 updateproduct.supplierID = productData.supplierID;
+                updateproduct.visible = false;
+                // need refactoring
+                updateproduct.Stocks = new System.Data.Linq.EntitySet<Stock>();
+                updateproduct.Locations = new System.Data.Linq.EntitySet<Location>();
+                updateproduct.OrderLines = new System.Data.Linq.EntitySet<OrderLine>();
+                updateproduct.ProdPropertyValues = new System.Data.Linq.EntitySet<ProdPropertyValue>();
+                updateproduct.ProductFandoms = new System.Data.Linq.EntitySet<ProductFandom>();
+                updateproduct.Supplier = new Supplier();
+                productDB.productToUnviasable(updateproduct);
+            }
+        }
+
+        public void setViasableTotrue(ProductData productData)
+>>>>>>> parent of 371b918... Order
+        {
+            IProductDB productDB = _productDB ?? new ProductDB();
+            Product updateproduct = new Product();
+            ProductData check = GetProductByID(productData.productID);
+            if (productData != null && check != null)
+            {
+                updateproduct.productName = productData.productName;
+                updateproduct.productID = productData.productID;
+                updateproduct.price = productData.price;
+                updateproduct.quantity = productData.quantity;
+                updateproduct.productDescription = productData.productDescription;
+                updateproduct.supplierID = productData.supplierID;
+<<<<<<< HEAD
+=======
+                updateproduct.visible = true;
+                // need refactoring
+                updateproduct.Stocks = new System.Data.Linq.EntitySet<Stock>();
+                updateproduct.Locations = new System.Data.Linq.EntitySet<Location>();
+                updateproduct.OrderLines = new System.Data.Linq.EntitySet<OrderLine>();
+                updateproduct.ProdPropertyValues = new System.Data.Linq.EntitySet<ProdPropertyValue>();
+                updateproduct.ProductFandoms = new System.Data.Linq.EntitySet<ProductFandom>();
+                updateproduct.Supplier = new Supplier();
+                productDB.productToviasble(updateproduct);
+            }
+        }
+
+            public void updateProduct(ProductData productData)
+            {
+            IProductDB productDB = _productDB ?? new ProductDB();
+            Product updateproduct = new Product();
+            ProductData check = GetProductByID(productData.productID);
+            if (productData != null && check != null)
+            {
+                updateproduct.productName = productData.productName;
+                updateproduct.productID = productData.productID;
+                updateproduct.price = productData.price;
+                updateproduct.quantity = productData.quantity;
+                updateproduct.productDescription = productData.productDescription;
+                updateproduct.supplierID = productData.supplierID;
+                updateproduct.visible = productData.viasble;
+>>>>>>> parent of 371b918... Order
                 // need refactoring
                 updateproduct.Stocks = new System.Data.Linq.EntitySet<Stock>();
                 updateproduct.Locations = new System.Data.Linq.EntitySet<Location>();

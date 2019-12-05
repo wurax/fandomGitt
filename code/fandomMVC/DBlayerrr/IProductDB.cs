@@ -18,5 +18,13 @@ namespace DBlayerrr
 
         Product GetProductByName(string name);
 
+<<<<<<< HEAD
+=======
+        void productToUnviasable(Product product);
+
+        void productToviasble(Product product);
+
+        IEnumerable<Product> GetlikeProdctNames(string name);
+>>>>>>> parent of 371b918... Order
     }
 }
