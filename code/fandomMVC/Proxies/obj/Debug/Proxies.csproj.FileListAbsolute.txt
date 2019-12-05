@@ -1,8 +1,0 @@
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\bin\Debug\Proxies.dll
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\bin\Debug\Proxies.pdb
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\bin\Debug\Contracts.dll
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\bin\Debug\Contracts.pdb
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\obj\Debug\Proxies.csprojAssemblyReference.cache
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\obj\Debug\Proxies.csproj.CopyComplete
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\obj\Debug\Proxies.dll
-C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\obj\Debug\Proxies.pdb
