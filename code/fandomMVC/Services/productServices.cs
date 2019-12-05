@@ -137,8 +137,11 @@ namespace Services
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public void updateProduct(ProductData productData)
 =======
+=======
+>>>>>>> parent of 371b918... Order
         public void setViasableTofalse(ProductData productData)
         {
             IProductDB productDB = _productDB ?? new ProductDB();
@@ -165,6 +168,9 @@ namespace Services
         }
 
         public void setViasableTotrue(ProductData productData)
+<<<<<<< HEAD
+>>>>>>> parent of 371b918... Order
+=======
 >>>>>>> parent of 371b918... Order
         {
             IProductDB productDB = _productDB ?? new ProductDB();

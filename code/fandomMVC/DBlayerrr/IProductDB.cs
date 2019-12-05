@@ -19,7 +19,10 @@ namespace DBlayerrr
         Product GetProductByName(string name);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 371b918... Order
         void productToUnviasable(Product product);
 
         void productToviasble(Product product);

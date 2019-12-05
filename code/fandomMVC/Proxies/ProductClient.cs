@@ -37,7 +37,10 @@ namespace Proxies
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 371b918... Order
         public void setViasableTofalse(ProductData productData)
         {
             Channel.setViasableTofalse(productData);
