@@ -64,7 +64,6 @@ INSERT INTO Supplier(supplierName, phone, email, zipcode)
 VALUES('pepe',20203030,'jjt@pepe.dk',9000)
 
 -----------Product-----------
-
 INSERT INTO Product(price, productname, productDescription, supplierID, quantity, visible)
 VALUES(500,  'Lord of the rings Frodo poster', 'a poster of Frodo holding the ring', 3, 20, 1);
 
@@ -73,6 +72,20 @@ VALUES(25000, 'Lord of the rings original ring', 'The original ring used in duri
 
 INSERT INTO Product(price, productname, productDescription, supplierID, quantity, visible)
 VALUES(500,  'J.cole T-shirt', 'picture of J.cole performing at a koncert', 1, 15, 1);
+
+
+-----------Images-------------
+INSERT INTO Images(imageName, imagePath, productID)
+VALUES ('Lord-of-the-rings-ring','~/Content/Lord-of-the-rings-ring.jpg',2);
+
+INSERT INTO Images(imageName, imagePath, productID)
+VALUES ('Frodo-poster','~/Content/Frodo-poster.jpg',1);
+
+INSERT INTO images(imageName, imagePath, productID)
+VALUES ('J.cole-tshirt-koncert_front','~/Content/J.cole-tshirt-koncert_front.jpg',3); 
+
+INSERT INTO images(imageName, imagePath, productID)
+VALUES ('J.cole-tshirt-koncert_back','~/Content/J.cole-tshirt-koncert_back.jpg',3) 
 
 -----------Stock-----------
 INSERT INTO Stock (arrivalDate, supplierId,inOrder,productID)

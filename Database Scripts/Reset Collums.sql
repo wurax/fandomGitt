@@ -7,6 +7,7 @@ DELETE FROM dbo.Payment;
 DELETE FROM dbo.ProductFandom;
 DELETE FROM dbo.Location;
 DELETE FROM dbo.Stock;
+DELETE FROM dbo.Images;
 DELETE FROM dbo.Product;
 DELETE FROM dbo.Supplier;
 DELETE FROM dbo.City;
@@ -23,3 +24,4 @@ DBCC CHECKIDENT (Product, RESEED, 0)
 DBCC CHECKIDENT (ProductFandom, RESEED, 0)
 DBCC CHECKIDENT (OrderLine, RESEED, 0)
 DBCC CHECKIDENT (Supplier, RESEED, 0)
+DBCC CHECKIDENT (Images, reseed, 0)

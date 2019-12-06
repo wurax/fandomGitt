@@ -48,12 +48,19 @@ FOREIGN KEY(supplierID) REFERENCES Supplier(supplierID),
 quantity int,
 );
 
+create table Images(
+imageID int NOT NULL IDENTITY (1,1) PRIMARY KEY,
+imageName varchar(50),
+imagePath varchar(50),
+productID int NOT NULL,
+FOREIGN KEY (productID) REFERENCES Product(productID)
+);
+
 create table Location(
 productID int NOT NULL,
 locationNo varchar(6) NOT NULL,
 FOREIGN KEY (productID) REFERENCES Product(productID),
 PRIMARY KEY  (productID, locationNo)
-
 );
 
 create table ProductFandom(
@@ -61,7 +68,6 @@ PFandomID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 fandomName varchar(50),  
 productID int,
 FOREIGN KEY(productID) REFERENCES Product(productID)
-
 );
 
 create table Stock(
