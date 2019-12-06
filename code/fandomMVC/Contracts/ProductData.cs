@@ -8,7 +8,7 @@ using DBlayerrr;
 namespace Contracts
 {
     [DataContract]
-     public class ProductData
+    public class ProductData
     {
         [DataMember]
         public double price { get; set; }
@@ -24,6 +24,8 @@ namespace Contracts
         public int? quantity { get; set; }
         [DataMember]
         public bool? viasble { get; set; }
+        [DataMember]
+        public List<ImageData> imageDatas { get; set; }
     }
 }
 

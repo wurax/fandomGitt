@@ -105,6 +105,15 @@ namespace Services
                     productData.supplierID = product.supplierID;
                     productData.price = product.price;
                     productData.viasble = product.visible;
+                    productData.imageDatas = new List<ImageData>();
+                    foreach (var item in product.Images)
+                    {
+                        ImageData imageData = new ImageData();
+                        imageData.imgID = item.imageID;
+                        imageData.imagePath = item.imagePath;
+                        imageData.productID = item.productID;
+                        productData.imageDatas.Add(imageData);
+                    }
                     productsData.Add(productData);
                 }
             }

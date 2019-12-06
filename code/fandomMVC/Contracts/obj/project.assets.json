@@ -194,19 +194,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mathias\\.nuget\\packages\\": {}
+    "C:\\Users\\Uth\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\fandom\\fandomGitt\\code\\fandomMVC\\Contracts\\Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\Contracts\\Contracts.csproj",
       "projectName": "Contracts",
-      "projectPath": "D:\\fandom\\fandomGitt\\code\\fandomMVC\\Contracts\\Contracts.csproj",
-      "packagesPath": "C:\\Users\\Mathias\\.nuget\\packages\\",
-      "outputPath": "D:\\fandom\\fandomGitt\\code\\fandomMVC\\Contracts\\obj\\",
+      "projectPath": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\Contracts\\Contracts.csproj",
+      "packagesPath": "C:\\Users\\Uth\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\Contracts\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Mathias\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Uth\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -219,8 +223,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj": {
-              "projectPath": "D:\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj"
+            "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj": {
+              "projectPath": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj"
             }
           }
         }

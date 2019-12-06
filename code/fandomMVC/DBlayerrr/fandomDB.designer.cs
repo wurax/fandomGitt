@@ -63,12 +63,15 @@ namespace DBlayerrr
     partial void InsertSupplier(Supplier instance);
     partial void UpdateSupplier(Supplier instance);
     partial void DeleteSupplier(Supplier instance);
-    partial void InsertProduct(Product instance);
-    partial void UpdateProduct(Product instance);
-    partial void DeleteProduct(Product instance);
     partial void InsertPayment(Payment instance);
     partial void UpdatePayment(Payment instance);
     partial void DeletePayment(Payment instance);
+    partial void InsertProduct(Product instance);
+    partial void UpdateProduct(Product instance);
+    partial void DeleteProduct(Product instance);
+    partial void InsertImage(Image instance);
+    partial void UpdateImage(Image instance);
+    partial void DeleteImage(Image instance);
     #endregion
 		
 		public fandomDBDataContext() : 
@@ -189,6 +192,14 @@ namespace DBlayerrr
 			}
 		}
 		
+		public System.Data.Linq.Table<Payment> Payments
+		{
+			get
+			{
+				return this.GetTable<Payment>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Product> Products
 		{
 			get
@@ -197,11 +208,11 @@ namespace DBlayerrr
 			}
 		}
 		
-		public System.Data.Linq.Table<Payment> Payments
+		public System.Data.Linq.Table<Image> Images
 		{
 			get
 			{
-				return this.GetTable<Payment>();
+				return this.GetTable<Image>();
 			}
 		}
 	}
@@ -2224,6 +2235,144 @@ namespace DBlayerrr
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment")]
+	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _paymentID;
+		
+		private System.Nullable<System.DateTime> _paymentDate;
+		
+		private int _totalAmount;
+		
+		private EntitySet<Order> _Orders;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnpaymentIDChanging(int value);
+    partial void OnpaymentIDChanged();
+    partial void OnpaymentDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnpaymentDateChanged();
+    partial void OntotalAmountChanging(int value);
+    partial void OntotalAmountChanged();
+    #endregion
+		
+		public Payment()
+		{
+			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paymentID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int paymentID
+		{
+			get
+			{
+				return this._paymentID;
+			}
+			set
+			{
+				if ((this._paymentID != value))
+				{
+					this.OnpaymentIDChanging(value);
+					this.SendPropertyChanging();
+					this._paymentID = value;
+					this.SendPropertyChanged("paymentID");
+					this.OnpaymentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paymentDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> paymentDate
+		{
+			get
+			{
+				return this._paymentDate;
+			}
+			set
+			{
+				if ((this._paymentDate != value))
+				{
+					this.OnpaymentDateChanging(value);
+					this.SendPropertyChanging();
+					this._paymentDate = value;
+					this.SendPropertyChanged("paymentDate");
+					this.OnpaymentDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalAmount", DbType="Int NOT NULL")]
+		public int totalAmount
+		{
+			get
+			{
+				return this._totalAmount;
+			}
+			set
+			{
+				if ((this._totalAmount != value))
+				{
+					this.OntotalAmountChanging(value);
+					this.SendPropertyChanging();
+					this._totalAmount = value;
+					this.SendPropertyChanged("totalAmount");
+					this.OntotalAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Payment_Order", Storage="_Orders", ThisKey="paymentID", OtherKey="paymentID")]
+		public EntitySet<Order> Orders
+		{
+			get
+			{
+				return this._Orders;
+			}
+			set
+			{
+				this._Orders.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Orders(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.Payment = this;
+		}
+		
+		private void detach_Orders(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.Payment = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Product")]
 	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2254,6 +2403,8 @@ namespace DBlayerrr
 		
 		private EntitySet<Stock> _Stocks;
 		
+		private EntitySet<Image> _Images;
+		
 		private EntityRef<Supplier> _Supplier;
 		
     #region Extensibility Method Definitions
@@ -2283,6 +2434,7 @@ namespace DBlayerrr
 			this._ProdPropertyValues = new EntitySet<ProdPropertyValue>(new Action<ProdPropertyValue>(this.attach_ProdPropertyValues), new Action<ProdPropertyValue>(this.detach_ProdPropertyValues));
 			this._ProductFandoms = new EntitySet<ProductFandom>(new Action<ProductFandom>(this.attach_ProductFandoms), new Action<ProductFandom>(this.detach_ProductFandoms));
 			this._Stocks = new EntitySet<Stock>(new Action<Stock>(this.attach_Stocks), new Action<Stock>(this.detach_Stocks));
+			this._Images = new EntitySet<Image>(new Action<Image>(this.attach_Images), new Action<Image>(this.detach_Images));
 			this._Supplier = default(EntityRef<Supplier>);
 			OnCreated();
 		}
@@ -2496,6 +2648,19 @@ namespace DBlayerrr
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Image", Storage="_Images", ThisKey="productID", OtherKey="productID")]
+		public EntitySet<Image> Images
+		{
+			get
+			{
+				return this._Images;
+			}
+			set
+			{
+				this._Images.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Supplier_Product", Storage="_Supplier", ThisKey="supplierID", OtherKey="supplierID", IsForeignKey=true)]
 		public Supplier Supplier
 		{
@@ -2609,110 +2774,171 @@ namespace DBlayerrr
 			this.SendPropertyChanging();
 			entity.Product = null;
 		}
+		
+		private void attach_Images(Image entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_Images(Image entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment")]
-	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Images")]
+	public partial class Image : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _paymentID;
+		private int _imageID;
 		
-		private System.Nullable<System.DateTime> _paymentDate;
+		private string _imageName;
 		
-		private int _totalAmount;
+		private string _imagePath;
 		
-		private EntitySet<Order> _Orders;
+		private int _productID;
+		
+		private EntityRef<Product> _Product;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnpaymentIDChanging(int value);
-    partial void OnpaymentIDChanged();
-    partial void OnpaymentDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnpaymentDateChanged();
-    partial void OntotalAmountChanging(int value);
-    partial void OntotalAmountChanged();
+    partial void OnimageIDChanging(int value);
+    partial void OnimageIDChanged();
+    partial void OnimageNameChanging(string value);
+    partial void OnimageNameChanged();
+    partial void OnimagePathChanging(string value);
+    partial void OnimagePathChanged();
+    partial void OnproductIDChanging(int value);
+    partial void OnproductIDChanged();
     #endregion
 		
-		public Payment()
+		public Image()
 		{
-			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+			this._Product = default(EntityRef<Product>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paymentID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int paymentID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imageID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int imageID
 		{
 			get
 			{
-				return this._paymentID;
+				return this._imageID;
 			}
 			set
 			{
-				if ((this._paymentID != value))
+				if ((this._imageID != value))
 				{
-					this.OnpaymentIDChanging(value);
+					this.OnimageIDChanging(value);
 					this.SendPropertyChanging();
-					this._paymentID = value;
-					this.SendPropertyChanged("paymentID");
-					this.OnpaymentIDChanged();
+					this._imageID = value;
+					this.SendPropertyChanged("imageID");
+					this.OnimageIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paymentDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> paymentDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imageName", DbType="VarChar(50)")]
+		public string imageName
 		{
 			get
 			{
-				return this._paymentDate;
+				return this._imageName;
 			}
 			set
 			{
-				if ((this._paymentDate != value))
+				if ((this._imageName != value))
 				{
-					this.OnpaymentDateChanging(value);
+					this.OnimageNameChanging(value);
 					this.SendPropertyChanging();
-					this._paymentDate = value;
-					this.SendPropertyChanged("paymentDate");
-					this.OnpaymentDateChanged();
+					this._imageName = value;
+					this.SendPropertyChanged("imageName");
+					this.OnimageNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalAmount", DbType="Int NOT NULL")]
-		public int totalAmount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imagePath", DbType="VarChar(50)")]
+		public string imagePath
 		{
 			get
 			{
-				return this._totalAmount;
+				return this._imagePath;
 			}
 			set
 			{
-				if ((this._totalAmount != value))
+				if ((this._imagePath != value))
 				{
-					this.OntotalAmountChanging(value);
+					this.OnimagePathChanging(value);
 					this.SendPropertyChanging();
-					this._totalAmount = value;
-					this.SendPropertyChanged("totalAmount");
-					this.OntotalAmountChanged();
+					this._imagePath = value;
+					this.SendPropertyChanged("imagePath");
+					this.OnimagePathChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Payment_Order", Storage="_Orders", ThisKey="paymentID", OtherKey="paymentID")]
-		public EntitySet<Order> Orders
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productID", DbType="Int NOT NULL")]
+		public int productID
 		{
 			get
 			{
-				return this._Orders;
+				return this._productID;
 			}
 			set
 			{
-				this._Orders.Assign(value);
+				if ((this._productID != value))
+				{
+					if (this._Product.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnproductIDChanging(value);
+					this.SendPropertyChanging();
+					this._productID = value;
+					this.SendPropertyChanged("productID");
+					this.OnproductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Image", Storage="_Product", ThisKey="productID", OtherKey="productID", IsForeignKey=true)]
+		public Product Product
+		{
+			get
+			{
+				return this._Product.Entity;
+			}
+			set
+			{
+				Product previousValue = this._Product.Entity;
+				if (((previousValue != value) 
+							|| (this._Product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Product.Entity = null;
+						previousValue.Images.Remove(this);
+					}
+					this._Product.Entity = value;
+					if ((value != null))
+					{
+						value.Images.Add(this);
+						this._productID = value.productID;
+					}
+					else
+					{
+						this._productID = default(int);
+					}
+					this.SendPropertyChanged("Product");
+				}
 			}
 		}
 		
@@ -2734,18 +2960,6 @@ namespace DBlayerrr
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Orders(Order entity)
-		{
-			this.SendPropertyChanging();
-			entity.Payment = this;
-		}
-		
-		private void detach_Orders(Order entity)
-		{
-			this.SendPropertyChanging();
-			entity.Payment = null;
 		}
 	}
 }

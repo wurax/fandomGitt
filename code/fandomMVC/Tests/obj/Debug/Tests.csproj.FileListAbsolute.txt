@@ -69,3 +69,4 @@ C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\c
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\Tests\obj\Debug\Tests.csproj.CopyComplete
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\Tests\obj\Debug\Tests.dll
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\Tests\obj\Debug\Tests.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Tests\bin\Debug\Tests.dll.config
