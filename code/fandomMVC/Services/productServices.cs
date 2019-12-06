@@ -112,7 +112,7 @@ namespace Services
         }
 
 
-        // ask  michael how to test
+        
         public void Insertproduct(ProductData productData)
         {
             IProductDB productDB = _productDB ?? new ProductDB();

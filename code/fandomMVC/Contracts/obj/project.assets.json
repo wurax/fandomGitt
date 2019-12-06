@@ -194,23 +194,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Uth\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Mathias\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Uth\\Desktop\\order\\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\\code\\fandomMVC\\Contracts\\Contracts.csproj",
+      "projectUniqueName": "D:\\fandom\\fandomGitt\\code\\fandomMVC\\Contracts\\Contracts.csproj",
       "projectName": "Contracts",
-      "projectPath": "C:\\Users\\Uth\\Desktop\\order\\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\\code\\fandomMVC\\Contracts\\Contracts.csproj",
-      "packagesPath": "C:\\Users\\Uth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Uth\\Desktop\\order\\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\\code\\fandomMVC\\Contracts\\obj\\",
+      "projectPath": "D:\\fandom\\fandomGitt\\code\\fandomMVC\\Contracts\\Contracts.csproj",
+      "packagesPath": "C:\\Users\\Mathias\\.nuget\\packages\\",
+      "outputPath": "D:\\fandom\\fandomGitt\\code\\fandomMVC\\Contracts\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Uth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mathias\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -223,8 +219,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Uth\\Desktop\\order\\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj": {
-              "projectPath": "C:\\Users\\Uth\\Desktop\\order\\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj"
+            "D:\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj": {
+              "projectPath": "D:\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj"
             }
           }
         }

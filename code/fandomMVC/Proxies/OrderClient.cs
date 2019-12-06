@@ -9,7 +9,7 @@ using Contracts;
 namespace Proxies
 {
 
-    class OrderClient : ClientBase<IOrderService>, IOrderService
+     public class OrderClient : ClientBase<IOrderService>, IOrderService
     {
         public void deleteOrder(OrderData order)
         {
