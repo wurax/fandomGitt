@@ -71,7 +71,27 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj",
         "projectName": "DBlayerrr",
-        "projectPath": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj"
+        "projectPath": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\DBlayerrr\\DBlayerrr.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\Exceptions\\Exceptions.csproj": {
+                "projectPath": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\Exceptions\\Exceptions.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\Exceptions\\Exceptions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\Exceptions\\Exceptions.csproj",
+        "projectName": "Exceptions",
+        "projectPath": "C:\\Users\\Uth\\Desktop\\fandom\\fandomGitt\\code\\fandomMVC\\Exceptions\\Exceptions.csproj"
       },
       "frameworks": {
         "net472": {}

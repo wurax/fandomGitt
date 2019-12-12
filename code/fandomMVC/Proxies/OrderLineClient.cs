@@ -8,19 +8,19 @@ using Contracts;
 
 namespace Proxies
 {
-    public class OrderLineClient : ClientBase<IOrderLineService>, IOrderLineService
+    public class OrderLineClient : ClientBase<IOrderlineService>, IOrderlineService
     {
         public void deleteOrderLine(OrderLineData orderline)
         {
             Channel.deleteOrderLine(orderline);
         }
 
-        public IEnumerable<OrderLineData> findorderLineByOrderId(int orderID)
+        public List<OrderLineData> findorderLineByOrderId(int orderID)
         {
             return Channel.findorderLineByOrderId(orderID);
         }
 
-        public IEnumerable<OrderLineData> findOrderLinesByProductID(int productID)
+        public List<OrderLineData> findOrderLinesByProductID(int productID)
         {
             return Channel.findorderLineByOrderId(productID);
         }

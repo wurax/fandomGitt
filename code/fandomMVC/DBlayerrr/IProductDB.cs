@@ -23,5 +23,6 @@ namespace DBlayerrr
         void productToVisible(Product product);
 
         IEnumerable<Product> GetlikeProdctNames(string name);
+        void MinusProductQuantity(int productID, int quntity);
     }
 }

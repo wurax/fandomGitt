@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartItemClient.cs" />
     <Compile Include="OrderClient.cs" />
     <Compile Include="OrderLineClient.cs" />
     <Compile Include="ProductClient.cs" />
@@ -52,6 +54,10 @@
     <ProjectReference Include="..\Contracts\Contracts.csproj">
       <Project>{5d109623-d7db-40b1-a192-4acb36105328}</Project>
       <Name>Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
+      <Project>{6faf05d0-92a2-4e87-9f0d-bb7e21d05257}</Project>
+      <Name>Exceptions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

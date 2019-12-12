@@ -28,11 +28,23 @@
       },
       "DBlayerrr/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "Exceptions": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/DBlayerrr.dll": {}
         },
         "runtime": {
           "bin/placeholder/DBlayerrr.dll": {}
+        }
+      },
+      "Exceptions/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Exceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Exceptions.dll": {}
         }
       }
     }
@@ -185,6 +197,11 @@
       "type": "project",
       "path": "../DBlayerrr/DBlayerrr.csproj",
       "msbuildProject": "../DBlayerrr/DBlayerrr.csproj"
+    },
+    "Exceptions/1.0.0": {
+      "type": "project",
+      "path": "../Exceptions/Exceptions.csproj",
+      "msbuildProject": "../Exceptions/Exceptions.csproj"
     }
   },
   "projectFileDependencyGroups": {

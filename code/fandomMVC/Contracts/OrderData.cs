@@ -18,6 +18,10 @@ namespace Contracts
         public int? paymentID { get; set; }
         [DataMember]
         public int? orderStatusID { get; set; }
+        [DataMember]
+        public string sessionID { get; set; }
+        [DataMember]
+        public List<OrderLineData> orderLineDatas { get; set; }
 
     }
 }

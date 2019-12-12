@@ -7,8 +7,9 @@ using Contracts;
 using DBlayerrr;
 namespace Services
 {
-    public class OrderLineService : IOrderLineService
+    public class OrderLineService : IOrderlineService
     {
+        
         IOrderLineDB _orderLineDB = null;
 
         public void deleteOrderLine(OrderLineData orderline)
@@ -29,7 +30,7 @@ namespace Services
             
         }
 
-        public IEnumerable<OrderLineData> findorderLineByOrderId(int orderID)
+        public List<OrderLineData> findorderLineByOrderId(int orderID)
         {
             IOrderLineDB orderLineDB = _orderLineDB ?? new OrderLineDB();
             IEnumerable<OrderLine> check = orderLineDB.findOrderLineByOrderID(orderID);
@@ -51,7 +52,7 @@ namespace Services
             return orderLines;
         }
 
-        public IEnumerable<OrderLineData> findOrderLinesByProductID(int productID)
+        public List<OrderLineData> findOrderLinesByProductID(int productID)
         {
             IOrderLineDB orderLineDB = _orderLineDB ?? new OrderLineDB();
             IEnumerable<OrderLine> check = orderLineDB.findOrderLineByOrderID(productID);
@@ -86,6 +87,7 @@ namespace Services
                 InsertOrderLine.price = orderline.price;
                 InsertOrderLine.lineText = orderline.lineText;
                 InsertOrderLine.productID = orderline.productId;
+
                 orderLineDB.insertOrderLine(InsertOrderLine);
             }
         }

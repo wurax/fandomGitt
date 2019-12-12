@@ -7,7 +7,7 @@ using System.ServiceModel;
 namespace Contracts
 {
     [ServiceContract]
-    public interface IOrderLineService
+    public interface IOrderlineService
     {
         [OperationContract]
         void InsertOrderLine(OrderLineData orderline);
@@ -18,9 +18,9 @@ namespace Contracts
         [OperationContract]
         void UpdateOrderLine(OrderLineData orderline);
         [OperationContract]
-        IEnumerable<OrderLineData> findOrderLinesByProductID(int productID);
+        List<OrderLineData> findOrderLinesByProductID(int productID);
         [OperationContract]
-        IEnumerable<OrderLineData> findorderLineByOrderId(int orderID);
+        List<OrderLineData> findorderLineByOrderId(int orderID);
       
             
 

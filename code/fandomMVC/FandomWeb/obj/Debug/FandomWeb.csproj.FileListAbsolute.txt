@@ -72,3 +72,15 @@ C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Contracts.dl
 C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Proxies.dll
 C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Contracts.pdb
 C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Proxies.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Elasticsearch.Net.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Nest.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\System.Buffers.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Elasticsearch.Net.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Elasticsearch.Net.xml
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Nest.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Nest.xml
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\System.Buffers.xml
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Exceptions.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\FandomWeb\bin\Exceptions.pdb

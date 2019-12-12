@@ -12,7 +12,7 @@ namespace DBlayerrr
         void updateOrder(Order order);
         void deleteOrder(Order order);
         Order findOrderById(int id);
-
         IEnumerable<Order> OrdersByProductId(int id);
+        Order findorderBySession(string session);
     }
 }

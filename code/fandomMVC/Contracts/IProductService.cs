@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using Exceptions;
 
 namespace Contracts
 {
@@ -27,5 +29,10 @@ namespace Contracts
         void setVisibleTotrue(ProductData productData);
         [OperationContract]
         IEnumerable<ProductData> GetlikeProdctNames(string name);
+        [OperationContract]
+        void MinusProductQuantity(int productID, int quntity);
+        [OperationContract]
+        void PlusProductQuantity(int productID, int quntity);
+
     }
 }

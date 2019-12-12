@@ -20,5 +20,6 @@ namespace Contracts
         public String lineText { get; set; }
         [DataMember]
         public int? productId { get; set; }
+        
     }
 }

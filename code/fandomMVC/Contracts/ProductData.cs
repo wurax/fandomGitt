@@ -26,6 +26,9 @@ namespace Contracts
         public bool? viasble { get; set; }
         [DataMember]
         public List<ImageData> imageDatas { get; set; }
+        [DataMember]
+        public string mainImgSrc { get; set; }
+        
     }
 }
 

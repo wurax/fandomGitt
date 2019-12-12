@@ -55,11 +55,15 @@ namespace DBlayerrr
                 {
                     orderline.productID.GetValue == id;
                 }
-
+System.InvalidOperationException: 'Sekvensen indeholder mere end ét element'
           }*/
-        } 
-        
+        }
 
-    
+        public Order findorderBySession(string session)
+        {
+            var orders = db.Orders;
+            var order = (from o in orders where o.sessionID == session select o).SingleOrDefault() ;
+            return order;
+        }
     }
 }

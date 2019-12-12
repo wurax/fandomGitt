@@ -48,6 +48,16 @@ FOREIGN KEY(supplierID) REFERENCES Supplier(supplierID),
 quantity int,
 );
 
+create table CartItem(
+cartItemID int not null IDENTITY(1,1) PRIMARY KEY,
+sessionID varchar(100) not null,
+quantity int,
+createdDate datetime,
+productID INT,
+FOREIGN KEY(productID) REFERENCES Product(productID)
+);
+
+
 create table Images(
 imageID int NOT NULL IDENTITY (1,1) PRIMARY KEY,
 imageName varchar(50),

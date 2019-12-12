@@ -22,3 +22,5 @@ C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\c
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\Proxies\obj\Debug\Proxies.csproj.CopyComplete
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\Proxies\obj\Debug\Proxies.dll
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\Proxies\obj\Debug\Proxies.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\bin\Debug\Exceptions.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Proxies\bin\Debug\Exceptions.pdb

@@ -1,14 +1,17 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Exceptions;
 
 namespace DBlayerrr
 {
-   public class ProductDB  : IProductDB
+    public class ProductDB : IProductDB
     {
+        private int tries = 0;
         fandomDBDataContext db = new fandomDBDataContext();
         public void insertProduct(Product Product)
         {
@@ -23,7 +26,7 @@ namespace DBlayerrr
                                     where a.productID == id
                                     select a).SingleOrDefault();
             return firstproduct;
-            
+
         }
 
         public IEnumerable<Product> GetProducts()
@@ -51,11 +54,34 @@ namespace DBlayerrr
             product1.supplierID = product.supplierID;
             product1.quantity = product.quantity;
 
+            db.SubmitChanges(System.Data.Linq.ConflictMode.FailOnFirstConflict);
+
+        }
+        public void MinusProductQuantity(int productID, int quntity)
+        {
+            Product product1 = db.Products.SingleOrDefault(p => p.productID == productID);
+            product1.quantity = product1.quantity - quntity;
+                if (product1.quantity < 0)
+                {
+                    string nomoreP = "there is no more Products";
+                    throw new NoMoreProductsException(nomoreP);
+
+                }
+                else
+                {
+                db.SubmitChanges();
+                }
+        }
+
+        public void PlusProductQuantity(int productID, int quntity)
+        {
+            
+            Product product1 = db.Products.SingleOrDefault(p => p.productID == productID);
+            product1.quantity = +quntity;
             db.SubmitChanges();
 
-
             
-
+            
         }
 
         public Product GetProductByName(string name)
@@ -86,8 +112,9 @@ namespace DBlayerrr
         public IEnumerable<Product> GetlikeProdctNames(string name)
         {
             var products = db.Products;
-            var productss = (from p in products where p.productName.IndexOf(name)>= 0 select p).AsEnumerable();
+            var productss = (from p in products where p.productName.IndexOf(name) >= 0 select p).AsEnumerable();
             return productss;
         }
     }
+    
 }

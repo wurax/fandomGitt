@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15, 14.75" name="fandomDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.125, 14.125" name="fandomDB">
   <DataContextMoniker Name="/fandomDBDataContext" />
   <nestedChildShapes>
     <classShape Id="905af0f3-6e54-4e76-8a10-a7b7addaea66" absoluteBounds="0.75, 6, 2, 1.1939925130208344">
@@ -24,12 +24,6 @@
       <DataClassMoniker Name="/fandomDBDataContext/OrderLine" />
       <nestedChildShapes>
         <elementListCompartment Id="a2c6f5d4-60b1-43ed-bd75-da7a6e849720" absoluteBounds="12.015, 3.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a2e3a0d8-fb01-435b-a079-9ece28b4b776" absoluteBounds="9.25, 12.75, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/fandomDBDataContext/Order" />
-      <nestedChildShapes>
-        <elementListCompartment Id="280b0115-bac9-4451-b0ef-8fc0f0321f04" absoluteBounds="9.265, 13.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="ce1329cc-c192-47df-a5c6-444a02c03590" absoluteBounds="6.5, 12, 2, 1.1939925130208344">
@@ -68,20 +62,6 @@
         <elementListCompartment Id="08d42774-3058-4135-ba51-bb74ec9b0511" absoluteBounds="3.515, 6.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.15625 : 12.75); (11.15625 : 4.42234537760417); (12 : 4.42234537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/fandomDBDataContext/Order/Order_OrderLine" />
-      <nodes>
-        <classShapeMoniker Id="a2e3a0d8-fb01-435b-a079-9ece28b4b776" />
-        <classShapeMoniker Id="9d65e286-5564-4286-bb7a-80985790f743" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 12.9719962565104); (9.25 : 12.9719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/fandomDBDataContext/OrderStatus/OrderStatus_Order" />
-      <nodes>
-        <classShapeMoniker Id="ce1329cc-c192-47df-a5c6-444a02c03590" />
-        <classShapeMoniker Id="a2e3a0d8-fb01-435b-a079-9ece28b4b776" />
-      </nodes>
-    </associationConnector>
     <associationConnector edgePoints="[(8.25 : 3.59699625651042); (9 : 3.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/fandomDBDataContext/Value/Value_ProdPropertyValue" />
       <nodes>
@@ -89,14 +69,14 @@
         <classShapeMoniker Id="0479fcf4-6f45-4097-add7-810d192def56" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 3.59699625651042); (6.01041666666667 : 3.59699625651042 : JumpStart); (6.17708333333333 : 3.59699625651042 : JumpEnd); (6.25 : 3.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 3.59699625651042); (6.25 : 3.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/fandomDBDataContext/Property/Property_Value" />
       <nodes>
         <classShapeMoniker Id="2e593152-aa5d-4edb-8a28-abe6f7d40ee0" />
         <classShapeMoniker Id="ecc8d34d-d8ed-4d3a-9c63-636af3224c6a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.88869466145833); (6.01041666666667 : 6.88869466145833 : JumpStart); (6.17708333333333 : 6.88869466145833 : JumpEnd); (6.91666666666667 : 6.88869466145833 : JumpStart); (7.08333333333333 : 6.88869466145833 : JumpEnd); (8.29166666666667 : 6.88869466145833 : JumpStart); (8.45833333333333 : 6.88869466145833 : JumpEnd); (11.0729166666667 : 6.88869466145833 : JumpStart); (11.2395833333333 : 6.88869466145833 : JumpEnd); (12 : 6.88869466145833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 6.88869466145833); (6.01041666666667 : 6.88869466145833 : JumpStart); (6.17708333333333 : 6.88869466145833 : JumpEnd); (6.91666666666667 : 6.88869466145833 : JumpStart); (7.08333333333333 : 6.88869466145833 : JumpEnd); (8.29166666666667 : 6.88869466145833 : JumpStart); (8.45833333333333 : 6.88869466145833 : JumpEnd); (11.1354166666667 : 6.88869466145833 : JumpStart); (11.3020833333333 : 6.88869466145833 : JumpEnd); (12 : 6.88869466145833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/fandomDBDataContext/Supplier/Supplier_Stock" />
       <nodes>
         <classShapeMoniker Id="a84c9501-85e1-4a6f-8c39-19a0cd790823" />
@@ -116,27 +96,20 @@
         <elementListCompartment Id="ee0b942b-0f80-4e41-938e-fce27bbcb9f0" absoluteBounds="3.3899999999999997, 11.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.375 : 11.46875); (10.1718725 : 11.46875); (10.1718725 : 12.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/fandomDBDataContext/Payment/Payment_Order" />
-      <nodes>
-        <classShapeMoniker Id="ee39d020-273d-4a5a-b21b-b9b84817a513" />
-        <classShapeMoniker Id="a2e3a0d8-fb01-435b-a079-9ece28b4b776" />
-      </nodes>
-    </associationConnector>
     <classShape Id="6fb59448-38e8-429b-82bc-e8577ae3bf32" absoluteBounds="6, 8.375, 2, 2.1554996744791666">
       <DataClassMoniker Name="/fandomDBDataContext/Product" />
       <nestedChildShapes>
         <elementListCompartment Id="ed620765-ff4e-4ebf-803e-d690a038f89a" absoluteBounds="6.015, 8.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7 : 8.375); (7 : 5.59699625651042); (8.29166666666667 : 5.59699625651042 : JumpStart); (8.45833333333333 : 5.59699625651042 : JumpEnd); (9 : 5.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7 : 8.375); (7 : 5.59699625651042); (8.29166666666667 : 5.59699625651042 : JumpStart); (8.45833333333333 : 5.59699625651042 : JumpEnd); (9 : 5.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/fandomDBDataContext/Product/Product_Location" />
       <nodes>
         <classShapeMoniker Id="6fb59448-38e8-429b-82bc-e8577ae3bf32" />
         <classShapeMoniker Id="3ff49a7b-c033-475c-b90d-3daf9f2b435e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.09375 : 8.375); (6.09375 : 2.71875); (12 : 2.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.09375 : 8.375); (6.09375 : 2.71875); (12 : 2.71875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/fandomDBDataContext/Product/Product_OrderLine" />
       <nodes>
         <classShapeMoniker Id="6fb59448-38e8-429b-82bc-e8577ae3bf32" />
@@ -150,21 +123,21 @@
         <classShapeMoniker Id="0479fcf4-6f45-4097-add7-810d192def56" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8 : 9.56814697265625); (9 : 9.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8 : 9.56814697265625); (9 : 9.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/fandomDBDataContext/Product/Product_ProductFandom" />
       <nodes>
         <classShapeMoniker Id="6fb59448-38e8-429b-82bc-e8577ae3bf32" />
         <classShapeMoniker Id="f1b4cc92-a35a-44cf-9745-f3d5a889d142" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.5 : 8.375); (7.5 : 7.23604823567708); (8.29166666666667 : 7.23604823567708 : JumpStart); (8.45833333333333 : 7.23604823567708 : JumpEnd); (11.0729166666667 : 7.23604823567708 : JumpStart); (11.2395833333333 : 7.23604823567708 : JumpEnd); (12 : 7.23604823567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.5 : 8.375); (7.5 : 7.23604823567708); (8.29166666666667 : 7.23604823567708 : JumpStart); (8.45833333333333 : 7.23604823567708 : JumpEnd); (11.1354166666667 : 7.23604823567708 : JumpStart); (11.3020833333333 : 7.23604823567708 : JumpEnd); (12 : 7.23604823567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/fandomDBDataContext/Product/Product_Stock" />
       <nodes>
         <classShapeMoniker Id="6fb59448-38e8-429b-82bc-e8577ae3bf32" />
         <classShapeMoniker Id="55142d5d-d27f-4831-8e01-a094f906d5ce" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 7.5881982421875); (4.5 : 9.45274983723958); (6 : 9.45274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 7.5881982421875); (4.5 : 9.45274983723958); (6 : 9.45274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/fandomDBDataContext/Supplier/Supplier_Product" />
       <nodes>
         <classShapeMoniker Id="a84c9501-85e1-4a6f-8c39-19a0cd790823" />
@@ -177,11 +150,51 @@
         <elementListCompartment Id="b4e8b89e-4351-4960-9746-473428939719" absoluteBounds="12.765, 9.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8 : 10.3886946614583); (11.0729166666667 : 10.3886946614583 : JumpStart); (11.2395833333333 : 10.3886946614583 : JumpEnd); (12.75 : 10.3886946614583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8 : 10.3886946614583); (11.1354166666667 : 10.3886946614583 : JumpStart); (11.3020833333333 : 10.3886946614583 : JumpEnd); (12.75 : 10.3886946614583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/fandomDBDataContext/Product/Product_Image" />
       <nodes>
         <classShapeMoniker Id="6fb59448-38e8-429b-82bc-e8577ae3bf32" />
         <classShapeMoniker Id="e0952412-6835-438d-b875-8f69c557da26" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3921061d-9a08-41f5-a23d-bbac66f33f76" absoluteBounds="14.875, 7.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/fandomDBDataContext/CartItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a6e37933-6e0d-43cf-b9e7-452446d88c11" absoluteBounds="14.89, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8 : 8.6250025); (11.1354166666667 : 8.6250025 : JumpStart); (11.3020833333333 : 8.6250025 : JumpEnd); (14.875 : 8.6250025)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/fandomDBDataContext/Product/Product_CartItem" />
+      <nodes>
+        <classShapeMoniker Id="6fb59448-38e8-429b-82bc-e8577ae3bf32" />
+        <classShapeMoniker Id="3921061d-9a08-41f5-a23d-bbac66f33f76" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f28b0ce7-f4ce-4636-a24e-286fc4073e6b" absoluteBounds="9.375, 11.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/fandomDBDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ad1985f-bf9e-4012-8109-24c104857b38" absoluteBounds="9.39, 12.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.21875 : 11.875); (11.21875 : 4.42234537760417); (12 : 4.42234537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/fandomDBDataContext/Order/Order1_OrderLine" />
+      <nodes>
+        <classShapeMoniker Id="f28b0ce7-f4ce-4636-a24e-286fc4073e6b" />
+        <classShapeMoniker Id="9d65e286-5564-4286-bb7a-80985790f743" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 12.5969962565104); (9.375 : 12.5969962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/fandomDBDataContext/OrderStatus/OrderStatus_Order1" />
+      <nodes>
+        <classShapeMoniker Id="ce1329cc-c192-47df-a5c6-444a02c03590" />
+        <classShapeMoniker Id="f28b0ce7-f4ce-4636-a24e-286fc4073e6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 11.90625); (9.375 : 11.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/fandomDBDataContext/Payment/Payment_Order1" />
+      <nodes>
+        <classShapeMoniker Id="ee39d020-273d-4a5a-b21b-b9b84817a513" />
+        <classShapeMoniker Id="f28b0ce7-f4ce-4636-a24e-286fc4073e6b" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

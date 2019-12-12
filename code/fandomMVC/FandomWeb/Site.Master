@@ -50,13 +50,14 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home </a></li>
-                        <li><a runat="server" href="~/Product">Prodcuts</a></li>
-                        <li><a runat="server" href="~/ShopingCart">ShoppingCart</a></li>
+                        <li><a runat="server" href="~/ProductList">Prodcuts</a></li>
+                        <li><a runat="server" href="~/ShoppingCart">ShoppingCart</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+      
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

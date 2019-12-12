@@ -31,27 +31,15 @@
       <Column Name="lineText" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="productID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="orderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Order_OrderLine" Member="Order" ThisKey="orderID" OtherKey="orderID" Type="Order" IsForeignKey="true" />
       <Association Name="Product_OrderLine" Member="Product" ThisKey="productID" OtherKey="productID" Type="Product" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Orders" Member="Orders">
-    <Type Name="Order">
-      <Column Name="orderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="invoiceDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="invoiceDueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="paymentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="orderStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Order_OrderLine" Member="OrderLines" ThisKey="orderID" OtherKey="orderID" Type="OrderLine" />
-      <Association Name="OrderStatus_Order" Member="OrderStatus" ThisKey="orderStatusID" OtherKey="orderStatusID" Type="OrderStatus" IsForeignKey="true" />
-      <Association Name="Payment_Order" Member="Payment" ThisKey="paymentID" OtherKey="paymentID" Type="Payment" IsForeignKey="true" />
+      <Association Name="Order1_OrderLine" Member="Order" ThisKey="orderID" OtherKey="orderID" Type="Order" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.OrderStatus" Member="OrderStatus">
     <Type Name="OrderStatus">
       <Column Name="orderStatusID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="OrderStatus_Order" Member="Orders" ThisKey="orderStatusID" OtherKey="orderStatusID" Type="Order" />
+      <Association Name="OrderStatus_Order1" Member="Orders" ThisKey="orderStatusID" OtherKey="orderStatusID" Type="Order" />
     </Type>
   </Table>
   <Table Name="dbo.ProdPropertyValue" Member="ProdPropertyValues">
@@ -106,7 +94,7 @@
       <Column Name="paymentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="paymentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="totalAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Payment_Order" Member="Orders" ThisKey="paymentID" OtherKey="paymentID" Type="Order" />
+      <Association Name="Payment_Order1" Member="Orders" ThisKey="paymentID" OtherKey="paymentID" Type="Order" />
     </Type>
   </Table>
   <Table Name="dbo.Product" Member="Products">
@@ -124,6 +112,7 @@
       <Association Name="Product_ProductFandom" Member="ProductFandoms" ThisKey="productID" OtherKey="productID" Type="ProductFandom" />
       <Association Name="Product_Stock" Member="Stocks" ThisKey="productID" OtherKey="productID" Type="Stock" />
       <Association Name="Product_Image" Member="Images" ThisKey="productID" OtherKey="productID" Type="Image" />
+      <Association Name="Product_CartItem" Member="CartItems" ThisKey="productID" OtherKey="productID" Type="CartItem" />
       <Association Name="Supplier_Product" Member="Supplier" ThisKey="supplierID" OtherKey="supplierID" Type="Supplier" IsForeignKey="true" />
     </Type>
   </Table>
@@ -134,6 +123,29 @@
       <Column Name="imagePath" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="productID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Product_Image" Member="Product" ThisKey="productID" OtherKey="productID" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CartItem" Member="CartItems">
+    <Type Name="CartItem">
+      <Column Name="cartItemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sessionID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createdDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="productID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Product_CartItem" Member="Product" ThisKey="productID" OtherKey="productID" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="orderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="invoiceDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="invoiceDueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="paymentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="orderStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sessionID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Order1_OrderLine" Member="OrderLines" ThisKey="orderID" OtherKey="orderID" Type="OrderLine" />
+      <Association Name="OrderStatus_Order1" Member="OrderStatus" ThisKey="orderStatusID" OtherKey="orderStatusID" Type="OrderStatus" IsForeignKey="true" />
+      <Association Name="Payment_Order1" Member="Payment" ThisKey="paymentID" OtherKey="paymentID" Type="Payment" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

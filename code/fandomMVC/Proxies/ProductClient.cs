@@ -6,11 +6,14 @@ using System.Text;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 using Contracts;
+using System.Data.Linq;
+using Exceptions;
 
 namespace Proxies
 {
      public class ProductClient : ClientBase<IProductService>, IProductService
     {
+
         public IEnumerable<ProductData> GetlikeProdctNames(string name)
         {
             return Channel.GetlikeProdctNames(name);
@@ -34,6 +37,16 @@ namespace Proxies
         public void Insertproduct(ProductData productData)
         {
             Channel.Insertproduct(productData);
+        }
+
+        public void MinusProductQuantity(int productID, int quntity)
+        {
+            Channel.MinusProductQuantity(productID, quntity);
+        }
+
+    public void PlusProductQuantity(int productID, int quntity)
+        {
+            throw new NotImplementedException();
         }
 
         public void RemoveProduct(ProductData productData)

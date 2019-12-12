@@ -37,3 +37,5 @@ C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\c
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.csproj.CopyComplete
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.dll
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\DBlayerrr\obj\Debug\DBlayerrr.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\bin\Debug\Exceptions.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\DBlayerrr\bin\Debug\Exceptions.pdb

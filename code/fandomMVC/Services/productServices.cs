@@ -2,7 +2,9 @@
 using DBlayerrr;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +21,7 @@ namespace Services
         {
             this._productDB = productDB;
         }
+
 
         public IEnumerable<ProductData> GetlikeProdctNames(string name)
         {
@@ -38,6 +41,7 @@ namespace Services
                     productData.supplierID = product.supplierID;
                     productData.price = product.price;
                     productData.viasble = product.visible;
+                 
                     productsData.Add(productData);
                 }
             }
@@ -61,7 +65,16 @@ namespace Services
                 productData.price = productEntity.price;
                 productData.viasble = productEntity.visible;
 
-
+                productData.imageDatas = new List<ImageData>();
+                foreach (var item in productEntity.Images)
+                {
+                    ImageData imageData = new ImageData();
+                    imageData.imgID = item.imageID;
+                    imageData.imagePath = item.imagePath;
+                    imageData.productID = item.productID;
+                    productData.imageDatas.Add(imageData);
+                }
+                productData.mainImgSrc = productData.imageDatas[0].imagePath;
             }
             return productData;
         }
@@ -114,6 +127,7 @@ namespace Services
                         imageData.productID = item.productID;
                         productData.imageDatas.Add(imageData);
                     }
+                    productData.mainImgSrc = productData.imageDatas[0].imagePath;
                     productsData.Add(productData);
                 }
             }
@@ -147,6 +161,20 @@ namespace Services
             }
 
 
+        }
+
+        public void MinusProductQuantity(int productID, int quntity)
+        {
+                IProductDB productDB = _productDB ?? new ProductDB();
+                Product productEntity = productDB.getProductByID(productID);
+                {
+                    productDB.MinusProductQuantity(productID, quntity);
+                }
+        }
+
+        public void PlusProductQuantity(int productID, int quntity)
+        {
+            throw new NotImplementedException();
         }
 
         public void RemoveProduct(ProductData productData)

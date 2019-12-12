@@ -217,3 +217,7 @@ C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\c
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\Contracts\obj\Debug\netstandard2.0\Contracts.csproj.CopyComplete
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\Contracts\obj\Debug\netstandard2.0\Contracts.dll
 C:\Users\Uth\Desktop\order\fandomGitt-371b9182e4f2aa21372e92519755c2140857ee8c\code\fandomMVC\Contracts\obj\Debug\netstandard2.0\Contracts.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Contracts\bin\Debug\netstandard2.0\Exceptions.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Contracts\bin\Debug\netstandard2.0\Exceptions.pdb
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Contracts\bin\Debug\netstandard2.0\System.Data.Linq.dll
+C:\Users\Uth\Desktop\fandom\fandomGitt\code\fandomMVC\Contracts\bin\Debug\netstandard2.0\System.Data.Linq.xml

@@ -21,6 +21,11 @@ namespace Proxies
             return Channel.findOrderById(id);
         }
 
+        public OrderData FindOrderBySesionId(string sessionID)
+        {
+            return Channel.FindOrderBySesionId(sessionID);
+        }
+
         public void InsertOrder(OrderData order)
         {
             Channel.InsertOrder(order);

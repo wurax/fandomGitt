@@ -24,6 +24,15 @@ namespace FandomWeb
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtProductName1;
 
         /// <summary>
+        /// Productlink1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Productlink1;
+
+        /// <summary>
         /// Image1 control.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,15 @@ namespace FandomWeb
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtProductName2;
 
         /// <summary>
+        /// productlink2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor productlink2;
+
+        /// <summary>
         /// Image2 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +94,15 @@ namespace FandomWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtProductName3;
+
+        /// <summary>
+        /// productlink3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor productlink3;
 
         /// <summary>
         /// Image3 control.

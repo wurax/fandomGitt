@@ -16,19 +16,22 @@ namespace ConsoleHost
             ServiceHost HostProductService1 = new ServiceHost(typeof(ProductServices));
             HostProductService1.Open();
 
-            //  ServiceHost HostProductService2 = new ServiceHost(typeof(OrderService));
-            //  HostProductService2.Open();
+            ServiceHost HostOrderService = new ServiceHost(typeof(OrderService));
+            HostOrderService.Open();
 
-            //  ServiceHost HostProductService3 = new ServiceHost(typeof(OrderLineService));
-            //  HostProductService3.Open();
+            ServiceHost HostOrderLineService = new ServiceHost(typeof(OrderLineService));
+            HostOrderLineService.Open();
 
+            ServiceHost HostCartItemService = new ServiceHost(typeof(CartItemService));
+            HostCartItemService.Open();
 
             Console.WriteLine("Services started. Press [Enter] to exit.");
             Console.ReadLine();
 
             HostProductService1.Close();
-            // HostProductService2.Close();
-            // HostProductService3.Close();
+            HostCartItemService.Close();
+            HostOrderService.Close();
+            HostOrderLineService.Close();
         }
     }
 }

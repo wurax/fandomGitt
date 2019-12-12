@@ -17,6 +17,8 @@ namespace Contracts
         [OperationContract]
         void deleteOrder(OrderData order);
         [OperationContract]
-       OrderData findOrderById(int id);
+        OrderData findOrderById(int id);
+        [OperationContract]
+        OrderData FindOrderBySesionId(string sessionID);
     }
 }
