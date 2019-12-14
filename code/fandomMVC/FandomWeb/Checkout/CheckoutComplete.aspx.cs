@@ -61,8 +61,14 @@ namespace FandomWeb.Checkout
                                         string msg = "there is no more products";
                                         throw new Exceptions.NoMoreProductsException(msg);
                                     }
-
-                                    productproxy.MinusProductQuantity(product.productID, int.Parse(item.amount.ToString()));
+                                    
+                                }
+                                foreach (var item in myCurrentOrder.orderLineDatas)
+                                {
+                                    ProductData product = new ProductData();
+                                    product = productproxy.GetProductByID(int.Parse(item.productId.ToString()));
+                                    product.quantity = product.quantity - item.amount;
+                                    productproxy.MinusProductQuantity(product.productID, int.Parse(product.quantity.ToString()));
                                 }
                                 orderProxy.updateOrder(myCurrentOrder);
 

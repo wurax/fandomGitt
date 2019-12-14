@@ -92,7 +92,7 @@ namespace FandomWeb.Logic
             var cartItems = GetCartItems();
             foreach (var item in cartItems)
             {
-                total = total + decimal.Parse(item.Product.price.ToString());
+                total = total + (decimal.Parse(item.Product.price.ToString()) *decimal.Parse(item.quantity.ToString()));
             }
             return total ?? decimal.Zero;
         }

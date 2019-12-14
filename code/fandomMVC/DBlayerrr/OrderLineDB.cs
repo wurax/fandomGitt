@@ -26,7 +26,7 @@ namespace DBlayerrr
         public IEnumerable<OrderLine> findOrderLineByOrderID(int orderId)
         {
             var orderLines = db.OrderLines;
-            var orderline = (from o in orderLines where o.orderLineID == orderId select o).AsEnumerable();
+            var orderline = (from o in orderLines where o.orderID == orderId select o).AsEnumerable();
             return orderline;
         }
 
