@@ -13,6 +13,14 @@ namespace Services
        
     {
         IOrderDB _OrderDB = null;
+
+        public void completOrder(int id)
+        {
+            IOrderDB orderDB = _OrderDB ?? new OrderDB();
+
+            orderDB.compeletOrder(id);
+        }
+
         public void deleteOrder(OrderData order)
         {
             IOrderDB orderDB = _OrderDB ?? new OrderDB();

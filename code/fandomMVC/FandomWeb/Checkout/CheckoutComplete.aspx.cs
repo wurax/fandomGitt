@@ -7,19 +7,21 @@ using System.Web.UI.WebControls;
 using Contracts; 
 using Proxies;
 using System.Data.Linq;
+using System.ServiceModel;
 
 namespace FandomWeb.Checkout
 {
     public partial class CheckoutComplete : System.Web.UI.Page
     {
+        int tries;
         protected void Page_Load(object sender, EventArgs e)
         {
             
             if (!IsPostBack)
             {
                     {
-                    int tries=0;
-                        OrderLineClient orderLineClient = new OrderLineClient();
+                    
+                    OrderLineClient orderLineClient = new OrderLineClient();
                         ProductClient productproxy = new ProductClient();
                         OrderClient orderProxy = new OrderClient();
 
@@ -48,29 +50,28 @@ namespace FandomWeb.Checkout
 
                                 OrderData myCurrentOrder;
                                 myCurrentOrder = orderProxy.FindOrderBySesionId(currentOrderId);
-                                // Update the order to reflect payment has been completed.
-                                myCurrentOrder.orderStatusID = 3;
 
-                                foreach (var item in myCurrentOrder.orderLineDatas)
-                                {
-                                    ProductData product = new ProductData();
-                                    product = productproxy.GetProductByID(int.Parse(item.productId.ToString()));
-                                    product.quantity = product.quantity - item.amount;
-                                    if (product.quantity <= -1)
-                                    {
-                                        string msg = "there is no more products";
-                                        throw new Exceptions.NoMoreProductsException(msg);
-                                    }
+                                orderProxy.completOrder(myCurrentOrder.orderID);
+                                //foreach (var item in myCurrentOrder.orderLineDatas)
+                                //{
+                                //    ProductData product = new ProductData();
+                                //    product = productproxy.GetProductByID(int.Parse(item.productId.ToString()));
+                                //    product.quantity = product.quantity - item.amount;
+                                //    if (product.quantity <= -1)
+                                //    {
+                                //        string msg = "there is no more products";
+                                //        throw new Exceptions.NoMoreProductsException(msg);
+                                //    }
                                     
-                                }
-                                foreach (var item in myCurrentOrder.orderLineDatas)
-                                {
-                                    ProductData product = new ProductData();
-                                    product = productproxy.GetProductByID(int.Parse(item.productId.ToString()));
-                                    product.quantity = product.quantity - item.amount;
-                                    productproxy.MinusProductQuantity(product.productID, int.Parse(product.quantity.ToString()));
-                                }
-                                orderProxy.updateOrder(myCurrentOrder);
+                                //}
+                                //foreach (var item in myCurrentOrder.orderLineDatas)
+                                //{
+                                //    ProductData product = new ProductData();
+                                //    product = productproxy.GetProductByID(int.Parse(item.productId.ToString()));
+                                //    product.quantity = product.quantity - item.amount;
+                                //    productproxy.MinusProductQuantity(product.productID, int.Parse(product.quantity.ToString()));
+                                //}
+                                //orderProxy.updateOrder(myCurrentOrder);
 
                                 // Clear shopping cart.
 
@@ -81,11 +82,11 @@ namespace FandomWeb.Checkout
                             {
                                 Response.Redirect("CheckoutError.aspx?");
                             }
-                            catch (System.ServiceModel.FaultException)
+                            catch (FaultException)
                             {
 
                                 tries++;
-                                if(tries <= 10)
+                                if(tries <= 11)
                                 {
                                     UpdateOrder();
                                 }
@@ -95,7 +96,7 @@ namespace FandomWeb.Checkout
                                 }
                                 
                             }
-                        }
+                             }
                             else
                             {
                                 Response.Redirect("CheckoutError.aspx?");
@@ -108,45 +109,64 @@ namespace FandomWeb.Checkout
             }
     }
 
-        private static void UpdateOrder()
+        private void UpdateOrder()
         {
+            tries++;
+            try { 
             using (FandomWeb.Logic.ShoppingcartActions usersShoppingCart =
                             new FandomWeb.Logic.ShoppingcartActions())
             {
-                string currentOrderId = usersShoppingCart.GetCartId();
-                OrderLineClient orderLineClient = new OrderLineClient();
-                ProductClient productproxy = new ProductClient();
-                OrderClient orderProxy = new OrderClient();
-                OrderData myCurrentOrder;
-                myCurrentOrder = orderProxy.FindOrderBySesionId(currentOrderId);
-                // Update the order to reflect payment has been completed.
-                myCurrentOrder.orderStatusID = 3;
+                 OrderClient orderProxy = new OrderClient();
+                    string currentOrderId = usersShoppingCart.GetCartId();
+                //    OrderLineClient orderLineClient = new OrderLineClient();
+                //    ProductClient productproxy = new ProductClient();
+                //    OrderClient orderProxy = new OrderClient();
+                   OrderData myCurrentOrder;
+                   myCurrentOrder = orderProxy.FindOrderBySesionId(currentOrderId);
+                orderProxy.completOrder(myCurrentOrder.orderID);
+                //    // Update the order to reflect payment has been completed.
+                //    myCurrentOrder.orderStatusID = 3;
 
-                foreach (var item in myCurrentOrder.orderLineDatas)
-                {
-                    ProductData product = new ProductData();
-                    product = productproxy.GetProductByID(int.Parse(item.productId.ToString()));
-                    product.quantity = product.quantity - item.amount;
-                    if (product.quantity <= -1)
-                    {
-                        string msg = "there is no more products";
-                        throw new Exceptions.NoMoreProductsException(msg);
-                    }
+                //    foreach (var item in myCurrentOrder.orderLineDatas)
+                //    {
+                //        ProductData product = new ProductData();
+                //        product = productproxy.GetProductByID(int.Parse(item.productId.ToString()));
+                //        product.quantity = product.quantity - item.amount;
+                //        if (product.quantity <= -1)
+                //        {
+                //            string msg = "there is no more products";
+                //            throw new Exceptions.NoMoreProductsException(msg);
+                //        }
 
-                    productproxy.MinusProductQuantity(product.productID, int.Parse(item.amount.ToString()));
-                }
-                orderProxy.updateOrder(myCurrentOrder);
+                //        productproxy.MinusProductQuantity(product.productID, int.Parse(item.amount.ToString()));
+                //    }
+                //    orderProxy.updateOrder(myCurrentOrder);
 
                 // Clear shopping cart.
-
+             
                 usersShoppingCart.EmptyCart();
+            }
+            }
+            catch (FaultException)
+            {
+
+                tries++;
+                if (tries <= 11)
+                {
+                    UpdateOrder();
+                }
+                else
+                {
+                    Response.Redirect("CheckoutError.aspx?");
+                }
+
             }
         }
 
         protected void Continue_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("Default.aspx");
         }
     }
 }

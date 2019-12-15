@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Exceptions;
 
 namespace DBlayerrr
 {
@@ -64,6 +66,33 @@ System.InvalidOperationException: 'Sekvensen indeholder mere end ét element'
             var orders = db.Orders;
             var order = (from o in orders where o.sessionID == session select o).SingleOrDefault() ;
             return order;
+        }
+
+        public void compeletOrder(int id)
+        {
+            try
+            {
+                var produts = db.Products;
+            var orders = db.Orders;
+            var order = (from o in orders where o.orderID == id select o).SingleOrDefault();
+            order.orderStatusID = 3;
+           
+                foreach (var item in order.OrderLines)
+                {
+                    var product = (from p in produts where p.productID == int.Parse(item.productID.ToString()) select p).SingleOrDefault();
+                    product.quantity = product.quantity - item.amount;
+                    if( product.quantity < 0)
+                    {
+                        throw new NoMoreProductsException();
+                    }
+                }
+           
+            db.SubmitChanges();
+            }
+            catch (NoMoreProductsException)
+            {
+                throw new ChangeConflictException();
+            }
         }
     }
 }

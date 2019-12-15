@@ -14,5 +14,7 @@ namespace DBlayerrr
         Order findOrderById(int id);
         IEnumerable<Order> OrdersByProductId(int id);
         Order findorderBySession(string session);
+
+        void compeletOrder(int id);
     }
 }

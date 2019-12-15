@@ -11,6 +11,11 @@ namespace Proxies
 
      public class OrderClient : ClientBase<IOrderService>, IOrderService
     {
+        public void completOrder(int id)
+        {
+            Channel.completOrder(id);
+        }
+
         public void deleteOrder(OrderData order)
         {
             Channel.deleteOrder(order);

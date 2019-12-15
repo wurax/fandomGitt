@@ -20,5 +20,7 @@ namespace Contracts
         OrderData findOrderById(int id);
         [OperationContract]
         OrderData FindOrderBySesionId(string sessionID);
+        [OperationContract]
+        void completOrder(int id);
     }
 }
