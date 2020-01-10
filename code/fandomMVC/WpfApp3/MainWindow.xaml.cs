@@ -34,9 +34,11 @@ namespace WpfApp3
         // Configure the message box to be displayed
         string messageBoxText = "Do you want to delete the product?";
         string caption = "Word Processor";
-        //MessageBoxButton button = MessageBoxButton.YesNo;
+        MessageBoxButton buttonYN = MessageBoxButton.YesNo;
+        MessageBoxButton Okbtn = MessageBoxButton.OK;
         //button.IComponentConnector IComponentConnectorYesNO = new IComponentConnector;
         MessageBoxImage icon = MessageBoxImage.Warning;
+        string Alert = "woops something when worng try again";
         ProductData selcetion = null;
 
         //inserted close
@@ -141,32 +143,36 @@ namespace WpfApp3
                     data.price = double.Parse(txtUPrice.Text);
                     data.productID = selcetion.productID;
                     data.productDescription = txtUDescription.Text;
-                    data.productName = txtName.Text;
+                    data.productName = txtUName.Text;
                     data.quantity = int.Parse(txtUQuntity.Text);
                     data.quantity = int.Parse(txtUSupplier.Text);
                     // take taxt from txtUboxes and save them a productdata send it tho updateProduct close proxy
-                    selcetion = null;
+                    
 
 
                     proxy.updateProduct(data);
+                    selcetion = null;
                 } 
                 catch (System.ServiceModel.FaultException)
                 {
-                    ProductClient proxy = new ProductClient();
-                    ProductData data = new ProductData();
-                    data.price = double.Parse(txtUPrice.Text);
-                    data.productID = selcetion.productID;
-                    data.productDescription = txtUDescription.Text;
-                    data.productName = txtName.Text;
-                    data.quantity = int.Parse(txtUQuntity.Text);
-                    data.quantity = int.Parse(txtUSupplier.Text);
-                    // take taxt from txtUboxes and save them a productdata send it tho updateProduct close proxy
-                    selcetion = null;
+                    MessageBox.Show(Alert, "Alert",Okbtn, icon);
+
+                    //ProductClient proxy = new ProductClient();
+                    //ProductData data = new ProductData();
+                    //data.price = double.Parse(txtUPrice.Text);
+                    //data.productID = selcetion.productID;
+                    //data.productDescription = txtUDescription.Text;
+                    //data.productName = txtUName.Text;
+                    //data.quantity = int.Parse(txtUQuntity.Text);
+                    //data.quantity = int.Parse(txtUSupplier.Text);
+                    //take taxt from txtUboxes and save them a productdata send it tho updateProduct close proxy
 
 
-                    proxy.updateProduct(data);
-                }
-                
+
+
+                    //proxy.updateProduct(data);
+                    //selcetion = null;
+                } 
               
             }
             

@@ -51,10 +51,9 @@ namespace DBlayerrr
             product1.price = product.price;
             product1.productName = product.productName;
             product1.productDescription = product.productDescription;
-            product1.supplierID = product.supplierID;
             product1.quantity = product.quantity;
 
-            db.SubmitChanges(System.Data.Linq.ConflictMode.FailOnFirstConflict);
+            db.SubmitChanges();
 
         }
         public void MinusProductQuantity(int productID, int quntity)

@@ -24,7 +24,7 @@
         </div>
         
         <div class="col-md-4">
-            
+           
              <h2 ID="txtProductName3" runat="server" >product name</h2>
             <a id="productlink3" href="" runat="server">
             <asp:Image ID="Image3" runat="server" />

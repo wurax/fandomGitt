@@ -123,7 +123,7 @@ namespace FandomWeb.Checkout
                 //    OrderClient orderProxy = new OrderClient();
                    OrderData myCurrentOrder;
                    myCurrentOrder = orderProxy.FindOrderBySesionId(currentOrderId);
-                orderProxy.completOrder(myCurrentOrder.orderID);
+                  orderProxy.completOrder(myCurrentOrder.orderID);
                 //    // Update the order to reflect payment has been completed.
                 //    myCurrentOrder.orderStatusID = 3;
 
@@ -166,7 +166,7 @@ namespace FandomWeb.Checkout
         protected void Continue_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("Default.aspx");
+            Response.Redirect("../Default");
         }
     }
 }
